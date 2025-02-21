@@ -1,0 +1,38 @@
+.list-name{
+    padding: 0;
+    width: 100%;
+}
+
+#listControl{
+    position: absolute;
+    width: 177px;
+    max-height: 200px; /* Set max height for scrollable area */
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: rgb(30,31,38);
+    border: 1px solid #312e2e;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    list-style: none;
+    z-index: 50;
+    padding-inline-start: 0;
+}
+
+#list-item{
+    padding-left: 1rem;  
+    padding-right: 1rem; 
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem; 
+    cursor: pointer;      /* cursor-pointer */
+    display: flex;
+    align-items: center;
+}
+
+#list-item:hover {
+    background-color: rgb(46, 47, 58); /* hover:bg-gray-200 */
+}
+
+.list-name{
+    padding: 0;
+    width: 100%;
+}
