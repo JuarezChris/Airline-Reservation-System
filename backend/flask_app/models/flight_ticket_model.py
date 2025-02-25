@@ -68,23 +68,5 @@ class FlightTicket:
     # def buy_ticket(cls, form_data):
     #     return "Success"
 
-    @classmethod
-    def get_all(cls):
-        query = "SELECT * FROM books_authors_db.books;"
-        results = connectToMySQL('books_authors_db').query_db(query)
-        # print(results)
-        books = []
-        for book in results:
-            books.append( cls(book) )
-        return books
 
-    @classmethod
-    def get_book(cls, data):
-        query = "SELECT * FROM books_authors_db.books WHERE id = %(id_num)s;"
-        return connectToMySQL('books_authors_db').query_db(query, data)[0]
-
-    @classmethod
-    def create_book(cls, data):
-        query = "INSERT INTO books_authors_db.books (title, num_of_pages) VALUES ( %(title)s, %(num_of_pages)s);"
-        return connectToMySQL('books_authors_db').query_db(query, data)
 
