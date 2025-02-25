@@ -1,0 +1,301 @@
+Ticket_ID,Airline_ID,Airline_Name,Flight_Number,Departure_Airport,Departure_City,Departure_Country,Departure_Date,Departure_Time,Arrival_Airport,Arrival_City,Arrival_Country,Arrival_Date,Arrival_Time,Duration,Ticket_Price,Seat_Class,Booking_Status,Seat,Available_Seats
+1,3,American Airlines,AM402,BOS,Boston,USA,2025-03-06,1140,YYZ,Toronto,Canada,2025-03-06,1707,5h 27m,956,Business,Available,A1,1
+2,2,Delta,DE809,BOS,Boston,USA,2025-02-26,1327,SYD,Sydney,Australia,2025-02-26,0321,13h 54m,1642,Business,Available,B1,1
+3,2,Delta,DE799,BOS,Boston,USA,2025-03-04,1729,NRT,Tokyo,Japan,2025-03-04,0634,13h 5m,1940,First Class,Available,C1,1
+4,1,JetBlue,JE537,DFW,Dallas,USA,2025-03-22,1708,CDG,Paris,France,2025-03-22,0157,8h 49m,1353,First Class,Available,D1,1
+5,5,United,UN581,SEA,Seattle,USA,2025-03-13,1203,YYZ,Toronto,Canada,2025-03-13,0222,14h 19m,309,Economy,Available,E1,1
+6,1,JetBlue,JE767,ORD,Chicago,USA,2025-03-03,1624,AMS,Amsterdam,Netherlands,2025-03-03,0518,12h 54m,263,Economy,Available,F1,1
+7,2,Delta,DE625,SEA,Seattle,USA,2025-03-03,0404,NRT,Tokyo,Japan,2025-03-03,1445,10h 41m,1964,Business,Available,A2,1
+8,5,United,UN403,DFW,Dallas,USA,2025-03-06,0855,FRA,Frankfurt,Germany,2025-03-06,1502,6h 7m,1197,Business,Available,B2,1
+9,1,JetBlue,JE874,DFW,Dallas,USA,2025-03-18,2305,DXB,Dubai,UAE,2025-03-18,1036,11h 31m,408,Business,Available,C2,1
+10,4,Southwest,SO639,SEA,Seattle,USA,2025-03-12,1427,AMS,Amsterdam,Netherlands,2025-03-12,1945,5h 18m,1503,Business,Available,D2,1
+11,5,United,UN519,ORD,Chicago,USA,2025-02-26,1112,SYD,Sydney,Australia,2025-02-26,2111,9h 59m,1644,Economy,Available,E2,1
+12,4,Southwest,SO367,DEN,Denver,USA,2025-03-01,0454,YYZ,Toronto,Canada,2025-03-01,1344,8h 50m,1884,Economy,Available,F2,1
+13,3,American Airlines,AM834,DFW,Dallas,USA,2025-03-18,2022,CDG,Paris,France,2025-03-18,0420,7h 58m,434,Economy,Available,A3,2
+14,1,JetBlue,JE285,DFW,Dallas,USA,2025-03-10,1548,FRA,Frankfurt,Germany,2025-03-10,2108,5h 20m,1069,First Class,Available,B3,1
+15,1,JetBlue,JE543,BOS,Boston,USA,2025-03-13,1712,AMS,Amsterdam,Netherlands,2025-03-13,2241,5h 29m,838,Economy,Available,C3,1
+16,2,Delta,DE868,JFK,New York,USA,2025-03-21,1348,CDG,Paris,France,2025-03-21,0046,10h 58m,1367,Business,Available,D3,1
+17,5,United,UN814,ATL,Atlanta,USA,2025-03-11,0735,MAD,Madrid,Spain,2025-03-11,1949,12h 14m,265,First Class,Available,E3,1
+18,1,JetBlue,JE524,DEN,Denver,USA,2025-03-12,1711,AMS,Amsterdam,Netherlands,2025-03-12,0632,13h 21m,1859,First Class,Available,F3,1
+19,1,JetBlue,JE959,MIA,Miami,USA,2025-03-10,0354,YYZ,Toronto,Canada,2025-03-10,1527,11h 33m,1922,Business,Available,A4,1
+20,5,United,UN973,MIA,Miami,USA,2025-02-28,2308,NRT,Tokyo,Japan,2025-02-28,1044,11h 36m,1423,Business,Available,B4,1
+21,1,JetBlue,JE258,MIA,Miami,USA,2025-03-09,0023,MAD,Madrid,Spain,2025-03-09,0752,7h 29m,1855,First Class,Available,C4,1
+22,2,Delta,DE247,LAX,Los Angeles,USA,2025-03-05,2135,LHR,London,UK,2025-03-05,0604,8h 29m,1598,Business,Available,D4,1
+23,3,American Airlines,AM370,DFW,Dallas,USA,2025-03-08,1521,CDG,Paris,France,2025-03-08,0116,9h 55m,1355,Business,Available,E4,1
+24,2,Delta,DE872,BOS,Boston,USA,2025-03-17,0916,CDG,Paris,France,2025-03-17,1617,7h 1m,874,First Class,Available,F4,1
+25,3,American Airlines,AM264,DEN,Denver,USA,2025-03-01,0004,NRT,Tokyo,Japan,2025-03-01,0843,8h 39m,1912,First Class,Available,A5,1
+26,3,American Airlines,AM745,ATL,Atlanta,USA,2025-03-13,1502,MAD,Madrid,Spain,2025-03-13,0008,9h 6m,280,First Class,Available,B5,1
+27,4,Southwest,SO968,JFK,New York,USA,2025-03-10,1203,DXB,Dubai,UAE,2025-03-10,2026,8h 23m,610,Business,Available,C5,1
+28,3,American Airlines,AM175,BOS,Boston,USA,2025-03-05,1118,SYD,Sydney,Australia,2025-03-05,0229,15h 11m,819,First Class,Available,D5,1
+29,3,American Airlines,AM930,SFO,San Francisco,USA,2025-03-21,1515,FRA,Frankfurt,Germany,2025-03-21,0021,9h 6m,436,Business,Available,E5,1
+30,1,JetBlue,JE183,DEN,Denver,USA,2025-03-15,2113,MAD,Madrid,Spain,2025-03-15,0433,7h 20m,667,First Class,Available,F5,1
+31,3,American Airlines,AM616,ATL,Atlanta,USA,2025-03-14,1309,YYZ,Toronto,Canada,2025-03-14,0435,15h 26m,1716,Business,Available,A1,1
+32,2,Delta,DE274,SEA,Seattle,USA,2025-03-18,1233,NRT,Tokyo,Japan,2025-03-18,2001,7h 28m,1745,Economy,Available,B1,1
+33,2,Delta,DE494,SFO,San Francisco,USA,2025-03-03,0628,SYD,Sydney,Australia,2025-03-03,1707,10h 39m,1420,Business,Available,C1,1
+34,3,American Airlines,AM452,ATL,Atlanta,USA,2025-02-27,0156,CDG,Paris,France,2025-02-27,1651,14h 55m,897,Economy,Available,D1,1
+35,2,Delta,DE983,DFW,Dallas,USA,2025-03-19,0232,LHR,London,UK,2025-03-19,1044,8h 12m,864,Business,Available,E1,1
+36,3,American Airlines,AM272,LAX,Los Angeles,USA,2025-03-26,0644,AMS,Amsterdam,Netherlands,2025-03-26,1636,9h 52m,370,Business,Available,F1,1
+37,4,Southwest,SO176,MIA,Miami,USA,2025-03-18,1003,CDG,Paris,France,2025-03-18,1539,5h 36m,1533,Economy,Available,A2,1
+38,3,American Airlines,AM815,SEA,Seattle,USA,2025-03-07,1806,MAD,Madrid,Spain,2025-03-07,0315,9h 9m,790,First Class,Available,B2,1
+39,2,Delta,DE546,BOS,Boston,USA,2025-03-02,2330,LHR,London,UK,2025-03-02,1438,15h 8m,883,Business,Available,C2,1
+40,4,Southwest,SO431,DFW,Dallas,USA,2025-03-26,1759,NRT,Tokyo,Japan,2025-03-26,0328,9h 29m,1460,First Class,Available,D2,1
+41,2,Delta,DE838,SEA,Seattle,USA,2025-03-11,1806,AMS,Amsterdam,Netherlands,2025-03-11,0509,11h 3m,593,Economy,Available,E2,1
+42,5,United,UN945,LAX,Los Angeles,USA,2025-02-26,1516,NRT,Tokyo,Japan,2025-02-26,0120,10h 4m,1923,Economy,Available,F2,1
+43,1,JetBlue,JE809,MIA,Miami,USA,2025-03-08,0842,DXB,Dubai,UAE,2025-03-08,1419,5h 37m,887,First Class,Available,A3,1
+44,2,Delta,DE422,BOS,Boston,USA,2025-03-07,1215,YYZ,Toronto,Canada,2025-03-07,0028,12h 13m,1659,Business,Available,B3,1
+45,4,Southwest,SO824,ATL,Atlanta,USA,2025-03-09,1219,MAD,Madrid,Spain,2025-03-09,2005,7h 46m,1033,Economy,Available,C3,1
+46,3,American Airlines,AM132,SFO,San Francisco,USA,2025-03-11,0509,NRT,Tokyo,Japan,2025-03-11,2029,15h 20m,1197,Economy,Available,D3,1
+47,5,United,UN770,JFK,New York,USA,2025-03-11,0344,AMS,Amsterdam,Netherlands,2025-03-11,1344,10h 0m,1471,Business,Available,E3,1
+48,1,JetBlue,JE116,SFO,San Francisco,USA,2025-03-11,2036,AMS,Amsterdam,Netherlands,2025-03-11,0253,6h 17m,1396,Business,Available,F3,1
+49,5,United,UN280,ORD,Chicago,USA,2025-03-20,1159,NRT,Tokyo,Japan,2025-03-20,1749,5h 50m,1340,Economy,Available,A4,1
+50,3,American Airlines,AM991,ORD,Chicago,USA,2025-03-26,2211,YYZ,Toronto,Canada,2025-03-26,0918,11h 7m,670,Economy,Available,B4,1
+51,3,American Airlines,AM205,JFK,New York,USA,2025-03-15,0837,CDG,Paris,France,2025-03-15,1525,6h 48m,638,Business,Available,C4,1
+52,3,American Airlines,AM186,BOS,Boston,USA,2025-03-19,1228,LHR,London,UK,2025-03-19,0111,12h 43m,1423,First Class,Available,D4,1
+53,4,Southwest,SO388,MIA,Miami,USA,2025-03-06,2054,YYZ,Toronto,Canada,2025-03-06,0833,11h 39m,1338,Business,Available,E4,1
+54,2,Delta,DE970,SFO,San Francisco,USA,2025-02-27,1348,NRT,Tokyo,Japan,2025-02-27,2155,8h 7m,620,Business,Available,F4,1
+55,5,United,UN589,MIA,Miami,USA,2025-03-14,2319,AMS,Amsterdam,Netherlands,2025-03-14,1346,14h 27m,1299,First Class,Available,A5,1
+56,4,Southwest,SO827,ORD,Chicago,USA,2025-03-20,0621,SYD,Sydney,Australia,2025-03-20,1330,7h 9m,705,Economy,Available,B5,1
+57,4,Southwest,SO281,DFW,Dallas,USA,2025-03-01,1338,NRT,Tokyo,Japan,2025-03-01,2136,7h 58m,1802,Business,Available,C5,1
+58,4,Southwest,SO190,SFO,San Francisco,USA,2025-03-06,2036,CDG,Paris,France,2025-03-06,0638,10h 2m,1047,Business,Available,D5,1
+59,5,United,UN489,DFW,Dallas,USA,2025-03-20,2103,YYZ,Toronto,Canada,2025-03-20,0403,7h 0m,408,Economy,Available,E5,1
+60,3,American Airlines,AM390,ORD,Chicago,USA,2025-03-25,2325,YYZ,Toronto,Canada,2025-03-25,0838,9h 13m,1201,First Class,Available,F5,1
+61,3,American Airlines,AM732,MIA,Miami,USA,2025-03-26,1835,YYZ,Toronto,Canada,2025-03-26,0204,7h 29m,951,First Class,Available,A1,1
+62,1,JetBlue,JE966,JFK,New York,USA,2025-03-13,2344,CDG,Paris,France,2025-03-13,1150,12h 6m,1660,Economy,Available,B1,1
+63,3,American Airlines,AM594,MIA,Miami,USA,2025-03-17,1610,CDG,Paris,France,2025-03-17,0255,10h 45m,1000,Economy,Available,C1,1
+64,2,Delta,DE587,DFW,Dallas,USA,2025-03-24,1652,SIN,Singapore,Singapore,2025-03-24,0415,11h 23m,1136,Economy,Available,D1,1
+65,1,JetBlue,JE988,BOS,Boston,USA,2025-03-17,1921,DXB,Dubai,UAE,2025-03-17,0517,9h 56m,1158,First Class,Available,E1,1
+66,3,American Airlines,AM142,DEN,Denver,USA,2025-03-15,1631,YYZ,Toronto,Canada,2025-03-15,0826,15h 55m,1240,First Class,Available,F1,1
+67,4,Southwest,SO818,BOS,Boston,USA,2025-03-25,1534,FRA,Frankfurt,Germany,2025-03-25,0019,8h 45m,1093,Business,Available,A2,1
+68,1,JetBlue,JE111,DEN,Denver,USA,2025-03-01,1055,SIN,Singapore,Singapore,2025-03-01,1816,7h 21m,528,Business,Available,B2,1
+69,4,Southwest,SO154,MIA,Miami,USA,2025-03-08,0247,DXB,Dubai,UAE,2025-03-08,1330,10h 43m,881,Business,Available,C2,1
+70,3,American Airlines,AM403,LAX,Los Angeles,USA,2025-03-04,0717,FRA,Frankfurt,Germany,2025-03-04,1427,7h 10m,1207,Economy,Available,D2,1
+71,3,American Airlines,AM249,ORD,Chicago,USA,2025-02-26,0810,NRT,Tokyo,Japan,2025-02-26,1343,5h 33m,950,Economy,Available,E2,1
+72,4,Southwest,SO226,JFK,New York,USA,2025-03-26,0748,NRT,Tokyo,Japan,2025-03-26,2257,15h 9m,1988,Economy,Available,F2,1
+73,4,Southwest,SO382,JFK,New York,USA,2025-03-04,1703,MAD,Madrid,Spain,2025-03-04,0021,7h 18m,909,Economy,Available,A3,1
+74,4,Southwest,SO212,JFK,New York,USA,2025-03-02,1357,MAD,Madrid,Spain,2025-03-02,2345,9h 48m,1585,Economy,Available,B3,1
+75,4,Southwest,SO879,SFO,San Francisco,USA,2025-02-27,1341,CDG,Paris,France,2025-02-27,0443,15h 2m,1231,Business,Available,C3,1
+76,1,JetBlue,JE134,MIA,Miami,USA,2025-03-09,1935,SIN,Singapore,Singapore,2025-03-09,0333,7h 58m,1823,Business,Available,D3,1
+77,4,Southwest,SO369,MIA,Miami,USA,2025-03-22,2057,AMS,Amsterdam,Netherlands,2025-03-22,0215,5h 18m,437,First Class,Available,E3,1
+78,4,Southwest,SO594,SFO,San Francisco,USA,2025-03-15,2301,MAD,Madrid,Spain,2025-03-15,0531,6h 30m,1511,First Class,Available,F3,1
+79,4,Southwest,SO415,MIA,Miami,USA,2025-02-27,1122,DXB,Dubai,UAE,2025-02-27,2004,8h 42m,1927,Business,Available,A4,1
+80,2,Delta,DE135,MIA,Miami,USA,2025-03-09,2032,MAD,Madrid,Spain,2025-03-09,1131,14h 59m,251,Business,Available,B4,1
+81,3,American Airlines,AM261,SFO,San Francisco,USA,2025-03-03,0634,YYZ,Toronto,Canada,2025-03-03,1508,8h 34m,270,First Class,Available,C4,1
+82,3,American Airlines,AM190,SEA,Seattle,USA,2025-03-05,1836,SIN,Singapore,Singapore,2025-03-05,0558,11h 22m,298,Economy,Available,D4,1
+83,4,Southwest,SO198,DFW,Dallas,USA,2025-03-01,0134,AMS,Amsterdam,Netherlands,2025-03-01,0716,5h 42m,1581,Economy,Available,E4,1
+84,3,American Airlines,AM385,ATL,Atlanta,USA,2025-02-28,2154,FRA,Frankfurt,Germany,2025-02-28,0451,6h 57m,1566,First Class,Available,F4,1
+85,1,JetBlue,JE492,ATL,Atlanta,USA,2025-03-13,0610,SYD,Sydney,Australia,2025-03-13,1842,12h 32m,1156,First Class,Available,A5,1
+86,1,JetBlue,JE158,JFK,New York,USA,2025-03-10,0736,AMS,Amsterdam,Netherlands,2025-03-10,1929,11h 53m,665,Economy,Available,B5,1
+87,2,Delta,DE889,SEA,Seattle,USA,2025-03-01,1511,CDG,Paris,France,2025-03-01,0517,14h 6m,1711,Economy,Available,C5,1
+88,4,Southwest,SO488,SFO,San Francisco,USA,2025-03-21,0216,SYD,Sydney,Australia,2025-03-21,1520,13h 4m,579,Business,Available,D5,1
+89,5,United,UN604,LAX,Los Angeles,USA,2025-03-23,1047,SYD,Sydney,Australia,2025-03-23,0132,14h 45m,975,Economy,Available,E5,1
+90,4,Southwest,SO532,SFO,San Francisco,USA,2025-03-10,1851,LHR,London,UK,2025-03-10,0451,10h 0m,685,First Class,Available,F5,1
+91,5,United,UN715,LAX,Los Angeles,USA,2025-03-20,1523,NRT,Tokyo,Japan,2025-03-20,0042,9h 19m,1201,Business,Available,A1,1
+92,5,United,UN944,DEN,Denver,USA,2025-03-12,1655,YYZ,Toronto,Canada,2025-03-12,0232,9h 37m,1016,Business,Available,B1,1
+93,5,United,UN879,SFO,San Francisco,USA,2025-03-18,1148,AMS,Amsterdam,Netherlands,2025-03-18,2316,11h 28m,241,Business,Available,C1,1
+94,4,Southwest,SO204,LAX,Los Angeles,USA,2025-03-09,0953,YYZ,Toronto,Canada,2025-03-09,2253,13h 0m,1954,Economy,Available,D1,1
+95,2,Delta,DE218,ORD,Chicago,USA,2025-03-17,0013,CDG,Paris,France,2025-03-17,0723,7h 10m,1562,Business,Available,E1,1
+96,3,American Airlines,AM834,LAX,Los Angeles,USA,2025-03-18,0339,DXB,Dubai,UAE,2025-03-18,1604,12h 25m,1726,First Class,Available,F1,2
+97,4,Southwest,SO467,SEA,Seattle,USA,2025-03-06,1215,CDG,Paris,France,2025-03-06,1959,7h 44m,407,Business,Available,A2,1
+98,2,Delta,DE780,ORD,Chicago,USA,2025-03-18,0450,MAD,Madrid,Spain,2025-03-18,1725,12h 35m,1601,Economy,Available,B2,1
+99,5,United,UN206,SFO,San Francisco,USA,2025-03-17,1858,DXB,Dubai,UAE,2025-03-17,1002,15h 4m,1922,Business,Available,C2,1
+100,3,American Airlines,AM222,DFW,Dallas,USA,2025-03-23,0012,FRA,Frankfurt,Germany,2025-03-23,0707,6h 55m,1220,Economy,Available,D2,1
+101,4,Southwest,SO425,BOS,Boston,USA,2025-03-03,1316,AMS,Amsterdam,Netherlands,2025-03-03,2222,9h 6m,1022,Business,Available,A1,1
+102,2,Delta,DE524,ORD,Chicago,USA,2025-03-22,0320,MAD,Madrid,Spain,2025-03-22,0935,6h 15m,376,Economy,Available,B1,1
+103,1,JetBlue,JE124,DEN,Denver,USA,2025-03-05,0749,DXB,Dubai,UAE,2025-03-05,1919,11h 30m,980,First Class,Available,C1,1
+104,5,United,UN975,BOS,Boston,USA,2025-03-03,1524,SYD,Sydney,Australia,2025-03-03,2057,5h 33m,1708,Business,Available,D1,1
+105,5,United,UN338,BOS,Boston,USA,2025-03-11,2221,SYD,Sydney,Australia,2025-03-12,1257,14h 36m,1233,Economy,Available,E1,1
+106,4,Southwest,SO349,MIA,Miami,USA,2025-03-25,1117,NRT,Tokyo,Japan,2025-03-26,0129,14h 12m,1800,Business,Available,F1,1
+107,5,United,UN964,SFO,San Francisco,USA,2025-03-11,0702,YYZ,Toronto,Canada,2025-03-11,1943,12h 41m,1338,First Class,Available,A2,1
+108,1,JetBlue,JE172,DEN,Denver,USA,2025-03-01,0340,SYD,Sydney,Australia,2025-03-01,1402,10h 22m,302,Economy,Available,B2,1
+109,3,American Airlines,AM371,ATL,Atlanta,USA,2025-03-17,1023,DXB,Dubai,UAE,2025-03-17,2335,13h 12m,249,Economy,Available,C2,1
+110,3,American Airlines,AM404,ATL,Atlanta,USA,2025-03-22,0722,YYZ,Toronto,Canada,2025-03-22,1233,5h 11m,1426,Economy,Available,D2,1
+111,2,Delta,DE252,LAX,Los Angeles,USA,2025-03-24,0228,NRT,Tokyo,Japan,2025-03-24,1615,13h 47m,602,First Class,Available,E2,1
+112,1,JetBlue,JE319,BOS,Boston,USA,2025-03-17,2110,MAD,Madrid,Spain,2025-03-18,0700,9h 50m,1797,Economy,Available,F2,1
+113,2,Delta,DE249,MIA,Miami,USA,2025-03-12,0234,SIN,Singapore,Singapore,2025-03-12,1825,15h 51m,1726,Economy,Available,A3,1
+114,2,Delta,DE200,JFK,New York,USA,2025-03-06,2305,CDG,Paris,France,2025-03-07,0841,9h 36m,1035,First Class,Available,B3,1
+115,5,United,UN203,SFO,San Francisco,USA,2025-03-10,0710,SIN,Singapore,Singapore,2025-03-10,1317,6h 7m,1517,Economy,Available,C3,1
+116,2,Delta,DE442,SFO,San Francisco,USA,2025-03-17,1807,FRA,Frankfurt,Germany,2025-03-17,2309,5h 2m,1588,Economy,Available,D3,1
+117,2,Delta,DE730,ATL,Atlanta,USA,2025-03-26,0537,FRA,Frankfurt,Germany,2025-03-26,1336,7h 59m,562,First Class,Available,E3,1
+118,2,Delta,DE107,MIA,Miami,USA,2025-03-19,1024,CDG,Paris,France,2025-03-20,0031,14h 7m,450,First Class,Available,F3,1
+119,1,JetBlue,JE823,DFW,Dallas,USA,2025-03-05,0541,SYD,Sydney,Australia,2025-03-05,1049,5h 8m,1314,Business,Available,A4,1
+120,3,American Airlines,AM118,DEN,Denver,USA,2025-03-25,1221,NRT,Tokyo,Japan,2025-03-25,2056,8h 35m,462,Business,Available,B4,1
+121,2,Delta,DE286,JFK,New York,USA,2025-03-24,0433,YYZ,Toronto,Canada,2025-03-24,1556,11h 23m,1674,Economy,Available,C4,1
+122,1,JetBlue,JE484,DEN,Denver,USA,2025-03-06,0811,SIN,Singapore,Singapore,2025-03-06,2120,13h 9m,513,Business,Available,D4,1
+123,2,Delta,DE110,JFK,New York,USA,2025-03-05,0611,LHR,London,UK,2025-03-05,2149,15h 38m,1847,Business,Available,E4,1
+124,4,Southwest,SO919,JFK,New York,USA,2025-03-08,0942,FRA,Frankfurt,Germany,2025-03-08,2003,10h 21m,1453,Business,Available,F4,1
+125,1,JetBlue,JE290,BOS,Boston,USA,2025-02-28,1654,SYD,Sydney,Australia,2025-03-01,0132,8h 38m,214,Economy,Available,A5,1
+126,4,Southwest,SO625,ATL,Atlanta,USA,2025-03-03,0544,LHR,London,UK,2025-03-03,1213,6h 29m,1163,Business,Available,B5,1
+127,4,Southwest,SO559,DEN,Denver,USA,2025-03-26,1242,LHR,London,UK,2025-03-27,0225,13h 43m,1579,Business,Available,C5,1
+128,2,Delta,DE733,SEA,Seattle,USA,2025-03-01,1138,SYD,Sydney,Australia,2025-03-01,1920,7h 42m,1274,First Class,Available,D5,1
+129,1,JetBlue,JE504,BOS,Boston,USA,2025-03-05,1701,FRA,Frankfurt,Germany,2025-03-05,2325,6h 24m,1096,Business,Available,E5,1
+130,2,Delta,DE192,SEA,Seattle,USA,2025-03-09,1549,NRT,Tokyo,Japan,2025-03-09,2146,5h 57m,993,Business,Available,F5,2
+131,1,JetBlue,JE705,ATL,Atlanta,USA,2025-03-01,0747,MAD,Madrid,Spain,2025-03-01,1547,8h 0m,231,Business,Available,A1,1
+132,3,American Airlines,AM794,ATL,Atlanta,USA,2025-02-26,1355,DXB,Dubai,UAE,2025-02-27,0307,13h 12m,965,First Class,Available,B1,1
+133,2,Delta,DE538,BOS,Boston,USA,2025-03-20,2141,LHR,London,UK,2025-03-21,1333,15h 52m,909,Business,Available,C1,1
+134,2,Delta,DE914,SEA,Seattle,USA,2025-03-03,2205,NRT,Tokyo,Japan,2025-03-04,0657,8h 52m,761,First Class,Available,D1,1
+135,3,American Airlines,AM680,MIA,Miami,USA,2025-03-16,0613,DXB,Dubai,UAE,2025-03-16,1833,12h 20m,210,Economy,Available,E1,1
+136,1,JetBlue,JE599,JFK,New York,USA,2025-03-18,0631,SYD,Sydney,Australia,2025-03-18,1601,9h 30m,1670,First Class,Available,F1,1
+137,3,American Airlines,AM348,DEN,Denver,USA,2025-03-04,0714,LHR,London,UK,2025-03-04,1444,7h 30m,1893,Economy,Available,A2,1
+138,2,Delta,DE374,LAX,Los Angeles,USA,2025-03-09,1237,LHR,London,UK,2025-03-10,0118,12h 41m,1221,First Class,Available,B2,2
+139,4,Southwest,SO221,DEN,Denver,USA,2025-02-26,0431,CDG,Paris,France,2025-02-26,1447,10h 16m,655,Economy,Available,C2,1
+140,4,Southwest,SO613,ORD,Chicago,USA,2025-03-14,0439,NRT,Tokyo,Japan,2025-03-14,1145,7h 6m,928,First Class,Available,D2,1
+141,3,American Airlines,AM149,DFW,Dallas,USA,2025-03-01,0703,NRT,Tokyo,Japan,2025-03-01,1929,12h 26m,1561,First Class,Available,E2,1
+142,2,Delta,DE192,ORD,Chicago,USA,2025-03-25,0409,NRT,Tokyo,Japan,2025-03-25,1427,10h 18m,1787,Business,Available,F2,2
+143,2,Delta,DE463,LAX,Los Angeles,USA,2025-03-03,0002,NRT,Tokyo,Japan,2025-03-03,1346,13h 44m,209,Economy,Available,A3,1
+144,5,United,UN727,BOS,Boston,USA,2025-02-28,1355,FRA,Frankfurt,Germany,2025-02-28,2012,6h 17m,991,Business,Available,B3,1
+145,1,JetBlue,JE939,MIA,Miami,USA,2025-03-18,0205,CDG,Paris,France,2025-03-18,1037,8h 32m,208,Business,Available,C3,1
+146,3,American Airlines,AM666,DEN,Denver,USA,2025-03-16,1237,LHR,London,UK,2025-03-17,0415,15h 38m,1115,Business,Available,D3,1
+147,4,Southwest,SO478,ORD,Chicago,USA,2025-03-10,2003,SYD,Sydney,Australia,2025-03-11,1045,14h 42m,250,First Class,Available,E3,2
+148,5,United,UN453,BOS,Boston,USA,2025-03-13,0929,LHR,London,UK,2025-03-13,1542,6h 13m,441,Economy,Available,F3,1
+149,3,American Airlines,AM694,LAX,Los Angeles,USA,2025-03-26,2243,YYZ,Toronto,Canada,2025-03-27,1436,15h 53m,269,First Class,Available,A4,1
+150,5,United,UN138,JFK,New York,USA,2025-03-26,1316,MAD,Madrid,Spain,2025-03-26,2157,8h 41m,1188,Business,Available,B4,1
+151,4,Southwest,SO879,JFK,New York,USA,2025-03-24,0405,LHR,London,UK,2025-03-24,1042,6h 37m,392,First Class,Available,C4,1
+152,1,JetBlue,JE510,MIA,Miami,USA,2025-03-13,0553,YYZ,Toronto,Canada,2025-03-13,1807,12h 14m,1760,Economy,Available,D4,1
+153,5,United,UN763,DEN,Denver,USA,2025-03-07,1541,NRT,Tokyo,Japan,2025-03-08,0119,9h 38m,364,First Class,Available,E4,1
+154,5,United,UN254,DFW,Dallas,USA,2025-03-02,0243,CDG,Paris,France,2025-03-02,1710,14h 27m,1485,First Class,Available,F4,1
+155,1,JetBlue,JE974,ATL,Atlanta,USA,2025-03-17,0649,FRA,Frankfurt,Germany,2025-03-17,1805,11h 16m,448,Economy,Available,A5,1
+156,4,Southwest,SO710,DEN,Denver,USA,2025-03-19,2058,MAD,Madrid,Spain,2025-03-20,1142,14h 44m,1333,Economy,Available,B5,1
+157,3,American Airlines,AM234,ORD,Chicago,USA,2025-02-26,1557,MAD,Madrid,Spain,2025-02-27,0440,12h 43m,1775,Economy,Available,C5,1
+158,4,Southwest,SO412,DFW,Dallas,USA,2025-03-11,1715,MAD,Madrid,Spain,2025-03-12,0835,15h 20m,1415,First Class,Available,D5,2
+159,3,American Airlines,AM920,ATL,Atlanta,USA,2025-03-02,0643,CDG,Paris,France,2025-03-02,1241,5h 58m,1028,Business,Available,E5,1
+160,3,American Airlines,AM354,BOS,Boston,USA,2025-03-07,0800,CDG,Paris,France,2025-03-07,1717,9h 17m,1333,First Class,Available,F5,1
+161,3,American Airlines,AM322,DEN,Denver,USA,2025-03-11,2101,DXB,Dubai,UAE,2025-03-12,0252,5h 51m,954,Economy,Available,A1,1
+162,1,JetBlue,JE435,SEA,Seattle,USA,2025-03-03,2102,DXB,Dubai,UAE,2025-03-04,1106,14h 4m,1373,Economy,Available,B1,1
+163,5,United,UN530,SFO,San Francisco,USA,2025-03-20,2253,SIN,Singapore,Singapore,2025-03-21,0902,10h 9m,1781,Business,Available,C1,1
+164,4,Southwest,SO488,DFW,Dallas,USA,2025-03-13,0844,NRT,Tokyo,Japan,2025-03-13,1602,7h 18m,673,Business,Available,D1,1
+165,1,JetBlue,JE419,SEA,Seattle,USA,2025-03-05,0320,DXB,Dubai,UAE,2025-03-05,1542,12h 22m,1001,First Class,Available,E1,1
+166,5,United,UN598,DFW,Dallas,USA,2025-03-13,1550,FRA,Frankfurt,Germany,2025-03-13,2333,7h 43m,1918,Business,Available,F1,1
+167,4,Southwest,SO325,LAX,Los Angeles,USA,2025-03-16,0632,SYD,Sydney,Australia,2025-03-16,2142,15h 10m,298,Business,Available,A2,1
+168,1,JetBlue,JE629,MIA,Miami,USA,2025-03-07,1115,DXB,Dubai,UAE,2025-03-07,1906,7h 51m,970,First Class,Available,B2,1
+169,1,JetBlue,JE762,DFW,Dallas,USA,2025-03-07,1428,CDG,Paris,France,2025-03-08,0226,11h 58m,1386,Economy,Available,C2,1
+170,2,Delta,DE285,JFK,New York,USA,2025-03-17,1506,YYZ,Toronto,Canada,2025-03-18,0039,9h 33m,830,Business,Available,D2,1
+171,3,American Airlines,AM944,SFO,San Francisco,USA,2025-03-21,0139,SYD,Sydney,Australia,2025-03-21,1010,8h 31m,1998,Business,Available,E2,1
+172,4,Southwest,SO383,BOS,Boston,USA,2025-03-22,2034,FRA,Frankfurt,Germany,2025-03-23,0358,7h 24m,985,Economy,Available,F2,1
+173,4,Southwest,SO153,DFW,Dallas,USA,2025-02-27,0952,NRT,Tokyo,Japan,2025-02-27,1709,7h 17m,1025,Economy,Available,A3,1
+174,2,Delta,DE210,ORD,Chicago,USA,2025-03-22,2013,FRA,Frankfurt,Germany,2025-03-23,0222,6h 9m,1604,First Class,Available,B3,1
+175,2,Delta,DE374,JFK,New York,USA,2025-03-15,0631,CDG,Paris,France,2025-03-15,1253,6h 22m,373,First Class,Available,C3,2
+176,4,Southwest,SO294,DEN,Denver,USA,2025-03-03,1144,SYD,Sydney,Australia,2025-03-04,0125,13h 41m,1695,Economy,Available,D3,1
+177,4,Southwest,SO585,LAX,Los Angeles,USA,2025-03-25,0150,NRT,Tokyo,Japan,2025-03-25,1124,9h 34m,1498,First Class,Available,E3,1
+178,2,Delta,DE924,SEA,Seattle,USA,2025-03-02,1519,YYZ,Toronto,Canada,2025-03-02,2330,8h 11m,1446,Economy,Available,F3,1
+179,4,Southwest,SO806,BOS,Boston,USA,2025-03-09,1425,DXB,Dubai,UAE,2025-03-09,2051,6h 26m,1809,First Class,Available,A4,1
+180,4,Southwest,SO634,DFW,Dallas,USA,2025-03-15,1302,YYZ,Toronto,Canada,2025-03-16,0028,11h 26m,959,First Class,Available,B4,1
+181,5,United,UN331,JFK,New York,USA,2025-03-15,1007,FRA,Frankfurt,Germany,2025-03-16,0033,14h 26m,1597,Economy,Available,C4,1
+182,1,JetBlue,JE706,BOS,Boston,USA,2025-03-02,1616,MAD,Madrid,Spain,2025-03-03,0502,12h 46m,1956,Business,Available,D4,1
+183,3,American Airlines,AM447,BOS,Boston,USA,2025-03-17,0955,NRT,Tokyo,Japan,2025-03-18,0112,15h 17m,1454,First Class,Available,E4,1
+184,4,Southwest,SO639,BOS,Boston,USA,2025-03-15,0639,SIN,Singapore,Singapore,2025-03-15,1206,5h 27m,1858,First Class,Available,F4,1
+185,4,Southwest,SO969,MIA,Miami,USA,2025-03-16,2130,YYZ,Toronto,Canada,2025-03-17,0243,5h 13m,1792,Business,Available,A5,1
+186,4,Southwest,SO686,ATL,Atlanta,USA,2025-02-27,1917,FRA,Frankfurt,Germany,2025-02-28,0827,13h 10m,686,Economy,Available,B5,1
+187,5,United,UN980,MIA,Miami,USA,2025-03-02,2247,SIN,Singapore,Singapore,2025-03-03,0949,11h 2m,325,First Class,Available,C5,1
+188,1,JetBlue,JE418,MIA,Miami,USA,2025-03-01,0201,YYZ,Toronto,Canada,2025-03-01,0835,6h 34m,299,Economy,Available,D5,1
+189,5,United,UN760,JFK,New York,USA,2025-03-17,0414,AMS,Amsterdam,Netherlands,2025-03-17,1518,11h 4m,817,Economy,Available,E5,2
+190,1,JetBlue,JE512,JFK,New York,USA,2025-03-25,2330,FRA,Frankfurt,Germany,2025-03-26,1043,11h 13m,1260,Economy,Available,F5,1
+191,4,Southwest,SO114,SEA,Seattle,USA,2025-03-14,2109,AMS,Amsterdam,Netherlands,2025-03-15,0514,8h 5m,480,Business,Available,A1,1
+192,5,United,UN769,DFW,Dallas,USA,2025-03-16,1953,LHR,London,UK,2025-03-17,0552,9h 59m,692,First Class,Available,B1,1
+193,5,United,UN977,ATL,Atlanta,USA,2025-03-09,1628,NRT,Tokyo,Japan,2025-03-10,0500,12h 32m,1275,Business,Available,C1,1
+194,2,Delta,DE565,MIA,Miami,USA,2025-03-12,1921,DXB,Dubai,UAE,2025-03-13,0127,6h 6m,1555,First Class,Available,D1,1
+195,1,JetBlue,JE731,ORD,Chicago,USA,2025-03-25,0759,NRT,Tokyo,Japan,2025-03-25,1531,7h 32m,342,Business,Available,E1,1
+196,3,American Airlines,AM980,DEN,Denver,USA,2025-03-18,0141,YYZ,Toronto,Canada,2025-03-18,0844,7h 3m,1023,First Class,Available,F1,1
+197,2,Delta,DE377,MIA,Miami,USA,2025-03-21,1844,MAD,Madrid,Spain,2025-03-22,0718,12h 34m,211,First Class,Available,A2,1
+198,5,United,UN181,BOS,Boston,USA,2025-03-07,0327,CDG,Paris,France,2025-03-07,1438,11h 11m,389,First Class,Available,B2,1
+199,5,United,UN396,ATL,Atlanta,USA,2025-03-08,0727,FRA,Frankfurt,Germany,2025-03-08,2252,15h 25m,1659,Business,Available,C2,1
+200,1,JetBlue,JE560,BOS,Boston,USA,2025-03-01,1659,AMS,Amsterdam,Netherlands,2025-03-02,0454,11h 55m,734,First Class,Available,D2,1
+201,4,Southwest,SO211,BOS,Boston,USA,2025-03-04,1022,DXB,Dubai,UAE,2025-03-04,2215,11h 53m,779,Economy,Available,E2,1
+202,3,American Airlines,AM150,JFK,New York,USA,2025-03-12,0409,AMS,Amsterdam,Netherlands,2025-03-12,1205,7h 56m,1752,First Class,Available,F2,1
+203,4,Southwest,SO234,MIA,Miami,USA,2025-02-27,2312,NRT,Tokyo,Japan,2025-02-28,0744,8h 32m,1605,Economy,Available,A3,1
+204,4,Southwest,SO446,JFK,New York,USA,2025-03-17,1206,YYZ,Toronto,Canada,2025-03-17,2336,11h 30m,1049,Business,Available,B3,1
+205,4,Southwest,SO724,JFK,New York,USA,2025-03-22,1748,AMS,Amsterdam,Netherlands,2025-03-23,0710,13h 22m,413,Business,Available,C3,1
+206,1,JetBlue,JE990,DFW,Dallas,USA,2025-03-04,1503,SYD,Sydney,Australia,2025-03-05,0521,14h 18m,1044,Economy,Available,D3,1
+207,2,Delta,DE449,ORD,Chicago,USA,2025-03-15,0338,MAD,Madrid,Spain,2025-03-15,1355,10h 17m,216,Economy,Available,E3,1
+208,1,JetBlue,JE221,LAX,Los Angeles,USA,2025-03-07,1158,DXB,Dubai,UAE,2025-03-07,2148,9h 50m,925,First Class,Available,F3,1
+209,3,American Airlines,AM829,LAX,Los Angeles,USA,2025-02-27,0926,CDG,Paris,France,2025-02-27,1702,7h 36m,1753,First Class,Available,A4,1
+210,5,United,UN240,BOS,Boston,USA,2025-03-01,0618,SYD,Sydney,Australia,2025-03-01,1225,6h 7m,252,Economy,Available,B4,1
+211,4,Southwest,SO498,DFW,Dallas,USA,2025-03-18,2220,LHR,London,UK,2025-03-19,0548,7h 28m,1634,First Class,Available,C4,1
+212,5,United,UN221,ATL,Atlanta,USA,2025-03-23,0004,LHR,London,UK,2025-03-23,1154,11h 50m,1794,Business,Available,D4,1
+213,2,Delta,DE320,DFW,Dallas,USA,2025-03-24,0923,MAD,Madrid,Spain,2025-03-24,1810,8h 47m,331,Business,Available,E4,1
+214,4,Southwest,SO669,SFO,San Francisco,USA,2025-03-06,0811,DXB,Dubai,UAE,2025-03-06,1852,10h 41m,1986,Economy,Available,F4,1
+215,4,Southwest,SO478,JFK,New York,USA,2025-03-14,0614,FRA,Frankfurt,Germany,2025-03-14,1248,6h 34m,855,Business,Available,A5,2
+216,4,Southwest,SO254,ATL,Atlanta,USA,2025-03-19,1508,YYZ,Toronto,Canada,2025-03-19,2326,8h 18m,542,Business,Available,B5,1
+217,5,United,UN599,MIA,Miami,USA,2025-02-25,1117,SYD,Sydney,Australia,2025-02-25,2239,11h 22m,657,First Class,Available,C5,1
+218,2,Delta,DE632,ATL,Atlanta,USA,2025-02-25,0619,SIN,Singapore,Singapore,2025-02-25,1834,12h 15m,1622,Business,Available,D5,1
+219,1,JetBlue,JE691,DFW,Dallas,USA,2025-03-09,2010,AMS,Amsterdam,Netherlands,2025-03-10,0212,6h 2m,546,Business,Available,E5,1
+220,4,Southwest,SO412,ATL,Atlanta,USA,2025-03-07,0512,YYZ,Toronto,Canada,2025-03-07,1632,11h 20m,1337,First Class,Available,F5,2
+221,5,United,UN712,LAX,Los Angeles,USA,2025-03-10,0914,SYD,Sydney,Australia,2025-03-10,2040,11h 26m,299,Business,Available,A1,1
+222,3,American Airlines,AM293,DEN,Denver,USA,2025-03-24,0248,YYZ,Toronto,Canada,2025-03-24,1626,13h 38m,313,First Class,Available,B1,1
+223,1,JetBlue,JE313,LAX,Los Angeles,USA,2025-03-26,0319,YYZ,Toronto,Canada,2025-03-26,1123,8h 4m,1731,Business,Available,C1,1
+224,1,JetBlue,JE414,LAX,Los Angeles,USA,2025-03-20,0235,YYZ,Toronto,Canada,2025-03-20,1133,8h 58m,1877,Economy,Available,D1,1
+225,5,United,UN760,ATL,Atlanta,USA,2025-02-26,1652,CDG,Paris,France,2025-02-27,0749,14h 57m,843,Economy,Available,E1,2
+226,5,United,UN149,JFK,New York,USA,2025-03-24,0523,AMS,Amsterdam,Netherlands,2025-03-24,1947,14h 24m,202,Business,Available,F1,1
+227,2,Delta,DE263,LAX,Los Angeles,USA,2025-03-05,0825,NRT,Tokyo,Japan,2025-03-05,2112,12h 47m,983,First Class,Available,A2,1
+228,3,American Airlines,AM277,JFK,New York,USA,2025-03-05,0843,AMS,Amsterdam,Netherlands,2025-03-05,2335,14h 52m,1122,First Class,Available,B2,1
+229,4,Southwest,SO611,ATL,Atlanta,USA,2025-03-14,1432,CDG,Paris,France,2025-03-14,2100,6h 28m,619,First Class,Available,C2,1
+230,1,JetBlue,JE932,SFO,San Francisco,USA,2025-03-14,1343,SYD,Sydney,Australia,2025-03-15,0352,14h 9m,867,Business,Available,D2,1
+231,1,JetBlue,JE450,SFO,San Francisco,USA,2025-03-15,0443,FRA,Frankfurt,Germany,2025-03-15,1718,12h 35m,1187,First Class,Available,E2,1
+232,4,Southwest,SO759,SFO,San Francisco,USA,2025-03-21,1841,CDG,Paris,France,2025-03-22,0654,12h 13m,1629,Economy,Available,F2,1
+233,1,JetBlue,JE283,ATL,Atlanta,USA,2025-03-09,1403,NRT,Tokyo,Japan,2025-03-10,0344,13h 41m,594,Business,Available,A3,1
+234,3,American Airlines,AM182,JFK,New York,USA,2025-03-06,0017,FRA,Frankfurt,Germany,2025-03-06,0917,9h 0m,1182,Business,Available,B3,1
+235,5,United,UN436,LAX,Los Angeles,USA,2025-03-22,1112,YYZ,Toronto,Canada,2025-03-23,0307,15h 55m,1606,Business,Available,C3,1
+236,4,Southwest,SO621,ORD,Chicago,USA,2025-03-10,1539,DXB,Dubai,UAE,2025-03-10,2120,5h 41m,263,First Class,Available,D3,1
+237,2,Delta,DE542,ORD,Chicago,USA,2025-03-12,0428,AMS,Amsterdam,Netherlands,2025-03-12,1011,5h 43m,366,Business,Available,E3,1
+238,5,United,UN535,LAX,Los Angeles,USA,2025-03-22,0703,MAD,Madrid,Spain,2025-03-22,2020,13h 17m,1407,Economy,Available,F3,2
+239,5,United,UN428,JFK,New York,USA,2025-03-10,2004,AMS,Amsterdam,Netherlands,2025-03-11,1016,14h 12m,488,First Class,Available,A4,1
+240,2,Delta,DE523,ORD,Chicago,USA,2025-03-17,2147,NRT,Tokyo,Japan,2025-03-18,1053,13h 6m,1400,Business,Available,B4,1
+241,2,Delta,DE766,SEA,Seattle,USA,2025-03-17,1310,AMS,Amsterdam,Netherlands,2025-03-18,0406,14h 56m,1643,First Class,Available,C4,1
+242,3,American Airlines,AM290,DEN,Denver,USA,2025-03-18,1013,YYZ,Toronto,Canada,2025-03-18,1900,8h 47m,394,Economy,Available,D4,1
+243,1,JetBlue,JE544,MIA,Miami,USA,2025-03-15,0412,CDG,Paris,France,2025-03-15,1144,7h 32m,1175,First Class,Available,E4,1
+244,1,JetBlue,JE315,DEN,Denver,USA,2025-03-06,0013,LHR,London,UK,2025-03-06,0607,5h 54m,1919,Business,Available,F4,1
+245,5,United,UN499,JFK,New York,USA,2025-03-06,1814,LHR,London,UK,2025-03-07,0837,14h 23m,510,Economy,Available,A5,1
+246,1,JetBlue,JE508,ORD,Chicago,USA,2025-03-05,1205,CDG,Paris,France,2025-03-05,1948,7h 43m,1703,First Class,Available,B5,1
+247,4,Southwest,SO516,ATL,Atlanta,USA,2025-03-11,0854,FRA,Frankfurt,Germany,2025-03-11,1436,5h 42m,916,Business,Available,C5,1
+248,3,American Airlines,AM156,LAX,Los Angeles,USA,2025-02-28,2121,FRA,Frankfurt,Germany,2025-03-01,0901,11h 40m,699,First Class,Available,D5,1
+249,2,Delta,DE149,SFO,San Francisco,USA,2025-02-27,1233,LHR,London,UK,2025-02-27,1752,5h 19m,1509,Business,Available,E5,1
+250,2,Delta,DE407,DEN,Denver,USA,2025-03-10,0658,NRT,Tokyo,Japan,2025-03-10,1520,8h 22m,225,First Class,Available,F5,1
+251,2,Delta,DE637,SFO,San Francisco,USA,2025-02-27,1654,YYZ,Toronto,Canada,2025-02-28,0134,8h 40m,492,Economy,Available,A1,1
+252,3,American Airlines,AM753,DEN,Denver,USA,2025-03-25,1839,DXB,Dubai,UAE,2025-03-26,0435,9h 56m,1714,First Class,Available,B1,1
+253,3,American Airlines,AM645,SFO,San Francisco,USA,2025-03-04,0821,MAD,Madrid,Spain,2025-03-04,1545,7h 24m,719,Economy,Available,C1,1
+254,2,Delta,DE863,SFO,San Francisco,USA,2025-03-16,1737,CDG,Paris,France,2025-03-17,0621,12h 44m,1335,Business,Available,D1,1
+255,5,United,UN402,BOS,Boston,USA,2025-03-19,1555,AMS,Amsterdam,Netherlands,2025-03-20,0200,10h 5m,1300,First Class,Available,E1,1
+256,1,JetBlue,JE180,LAX,Los Angeles,USA,2025-03-13,1151,SYD,Sydney,Australia,2025-03-13,1914,7h 23m,503,Business,Available,F1,1
+257,1,JetBlue,JE926,SEA,Seattle,USA,2025-03-25,1431,YYZ,Toronto,Canada,2025-03-25,2315,8h 44m,465,First Class,Available,A2,1
+258,2,Delta,DE133,SEA,Seattle,USA,2025-02-27,1915,CDG,Paris,France,2025-02-28,0101,5h 46m,704,Business,Available,B2,1
+259,5,United,UN385,MIA,Miami,USA,2025-03-05,1352,AMS,Amsterdam,Netherlands,2025-03-05,1924,5h 32m,754,Economy,Available,C2,1
+260,5,United,UN532,ATL,Atlanta,USA,2025-03-12,0322,NRT,Tokyo,Japan,2025-03-12,1208,8h 46m,560,First Class,Available,D2,1
+261,1,JetBlue,JE135,MIA,Miami,USA,2025-03-12,0852,SYD,Sydney,Australia,2025-03-12,1815,9h 23m,1130,Business,Available,E2,1
+262,5,United,UN194,ORD,Chicago,USA,2025-03-17,2155,NRT,Tokyo,Japan,2025-03-18,0520,7h 25m,601,Economy,Available,F2,1
+263,5,United,UN129,BOS,Boston,USA,2025-03-15,0454,LHR,London,UK,2025-03-15,1106,6h 12m,564,Economy,Available,A3,1
+264,5,United,UN904,SEA,Seattle,USA,2025-03-15,1810,NRT,Tokyo,Japan,2025-03-16,0718,13h 8m,1798,First Class,Available,B3,1
+265,3,American Airlines,AM439,LAX,Los Angeles,USA,2025-03-11,0621,CDG,Paris,France,2025-03-11,1752,11h 31m,348,Economy,Available,C3,1
+266,4,Southwest,SO301,ORD,Chicago,USA,2025-03-24,1202,DXB,Dubai,UAE,2025-03-25,0348,15h 46m,1960,Business,Available,D3,1
+267,1,JetBlue,JE699,DEN,Denver,USA,2025-03-14,2134,SYD,Sydney,Australia,2025-03-15,0354,6h 20m,1609,First Class,Available,E3,1
+268,5,United,UN553,JFK,New York,USA,2025-03-19,0556,YYZ,Toronto,Canada,2025-03-19,1920,13h 24m,505,Economy,Available,F3,1
+269,3,American Airlines,AM641,MIA,Miami,USA,2025-03-14,0851,FRA,Frankfurt,Germany,2025-03-14,2131,12h 40m,673,Economy,Available,A4,1
+270,2,Delta,DE789,JFK,New York,USA,2025-03-17,1907,NRT,Tokyo,Japan,2025-03-18,0712,12h 5m,1947,First Class,Available,B4,1
+271,2,Delta,DE883,SFO,San Francisco,USA,2025-03-22,1915,LHR,London,UK,2025-03-23,0943,14h 28m,1552,Economy,Available,C4,1
+272,4,Southwest,SO740,SFO,San Francisco,USA,2025-03-08,2350,YYZ,Toronto,Canada,2025-03-09,0833,8h 43m,277,First Class,Available,D4,1
+273,5,United,UN312,SEA,Seattle,USA,2025-03-23,0754,SYD,Sydney,Australia,2025-03-23,1841,10h 47m,1087,Business,Available,E4,1
+274,3,American Airlines,AM310,LAX,Los Angeles,USA,2025-03-06,1234,YYZ,Toronto,Canada,2025-03-07,0107,12h 33m,1766,Economy,Available,F4,1
+275,1,JetBlue,JE451,MIA,Miami,USA,2025-03-13,0020,CDG,Paris,France,2025-03-13,0811,7h 51m,1434,Business,Available,A5,1
+276,2,Delta,DE185,SFO,San Francisco,USA,2025-02-28,1141,FRA,Frankfurt,Germany,2025-02-28,2229,10h 48m,1414,Economy,Available,B5,1
+277,5,United,UN984,LAX,Los Angeles,USA,2025-02-28,2155,LHR,London,UK,2025-03-01,1111,13h 16m,1192,Business,Available,C5,1
+278,4,Southwest,SO855,SFO,San Francisco,USA,2025-03-16,1110,NRT,Tokyo,Japan,2025-03-17,0029,13h 19m,1244,Business,Available,D5,1
+279,1,JetBlue,JE880,DEN,Denver,USA,2025-03-02,1036,SYD,Sydney,Australia,2025-03-02,1628,5h 52m,1200,First Class,Available,E5,1
+280,1,JetBlue,JE312,DFW,Dallas,USA,2025-03-16,1545,FRA,Frankfurt,Germany,2025-03-17,0247,11h 2m,618,Economy,Available,F5,1
+281,3,American Airlines,AM339,ORD,Chicago,USA,2025-03-26,1507,SIN,Singapore,Singapore,2025-03-27,0706,15h 59m,1921,Economy,Available,A1,1
+282,1,JetBlue,JE428,BOS,Boston,USA,2025-03-04,0053,DXB,Dubai,UAE,2025-03-04,0952,8h 59m,373,Business,Available,B1,1
+283,2,Delta,DE890,BOS,Boston,USA,2025-03-16,2325,MAD,Madrid,Spain,2025-03-17,1245,13h 20m,716,Economy,Available,C1,1
+284,5,United,UN913,DEN,Denver,USA,2025-03-13,1533,MAD,Madrid,Spain,2025-03-14,0320,11h 47m,1767,Business,Available,D1,1
+285,1,JetBlue,JE253,MIA,Miami,USA,2025-03-13,1110,LHR,London,UK,2025-03-13,2051,9h 41m,1277,Economy,Available,E1,1
+286,5,United,UN535,DEN,Denver,USA,2025-03-20,0124,AMS,Amsterdam,Netherlands,2025-03-20,1036,9h 12m,1626,First Class,Available,F1,2
+287,2,Delta,DE500,SFO,San Francisco,USA,2025-03-05,2005,SIN,Singapore,Singapore,2025-03-06,0314,7h 9m,735,First Class,Available,A2,1
+288,4,Southwest,SO914,JFK,New York,USA,2025-03-22,0103,FRA,Frankfurt,Germany,2025-03-22,1322,12h 19m,1321,Business,Available,B2,1
+289,5,United,UN610,LAX,Los Angeles,USA,2025-03-08,1237,SIN,Singapore,Singapore,2025-03-08,2234,9h 57m,1244,Business,Available,C2,1
+290,2,Delta,DE900,MIA,Miami,USA,2025-03-04,1331,AMS,Amsterdam,Netherlands,2025-03-04,2218,8h 47m,586,Business,Available,D2,1
+291,4,Southwest,SO841,DFW,Dallas,USA,2025-03-10,1008,MAD,Madrid,Spain,2025-03-11,0034,14h 26m,281,Business,Available,E2,1
+292,5,United,UN642,JFK,New York,USA,2025-03-12,0152,DXB,Dubai,UAE,2025-03-12,1152,10h 0m,1654,Business,Available,F2,1
+293,1,JetBlue,JE438,DEN,Denver,USA,2025-03-25,0851,YYZ,Toronto,Canada,2025-03-25,1940,10h 49m,1305,Business,Available,A3,1
+294,5,United,UN590,BOS,Boston,USA,2025-03-20,1137,SYD,Sydney,Australia,2025-03-21,0305,15h 28m,1603,Business,Available,B3,1
+295,2,Delta,DE672,ATL,Atlanta,USA,2025-03-07,1858,AMS,Amsterdam,Netherlands,2025-03-08,0837,13h 39m,627,Economy,Available,C3,1
+296,2,Delta,DE839,DEN,Denver,USA,2025-03-20,0857,LHR,London,UK,2025-03-20,1648,7h 51m,1691,Economy,Available,D3,1
+297,3,American Airlines,AM813,MIA,Miami,USA,2025-02-27,0308,NRT,Tokyo,Japan,2025-02-27,0827,5h 19m,1844,First Class,Available,E3,1
+298,4,Southwest,SO646,SFO,San Francisco,USA,2025-03-16,1759,LHR,London,UK,2025-03-17,0827,14h 28m,960,Business,Available,F3,1
+299,4,Southwest,SO533,SEA,Seattle,USA,2025-03-02,1302,YYZ,Toronto,Canada,2025-03-02,1957,6h 55m,390,Economy,Available,A4,1
+300,4,Southwest,SO180,DFW,Dallas,USA,2025-03-09,0419,DXB,Dubai,UAE,2025-03-09,1310,8h 51m,1705,First Class,Available,B4,1

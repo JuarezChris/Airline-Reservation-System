@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Dashboard from "./components/Dashboard";
 import axios from "axios";
 import './App.css'
+import BookFlightPage from "./components/BookFlightPage";
 
 function App() {
 //   const [data, setData] = useState([]);
@@ -34,10 +35,11 @@ function App() {
                     </li>
                 ))}
             </ul> */}
-            
+
             <Router>
                 <Routes>
                     <Route index path="/dashboard" element={<Dashboard />} />
+                    <Route index path="/flights" element={<BookFlightPage />} />
                 </Routes>
             </Router>
         </div>

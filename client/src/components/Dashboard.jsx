@@ -8,7 +8,7 @@ const Dashboard = () => {
     const [showDropdown, setShowDropdown] = useState(false);
     const [filterData, setFilterData] = useState([])
     const [selectedFlight, setSelectedFlight] = useState({
-        name: ""
+        Airline_Name: ""
     })
 
     useEffect(() => {
@@ -52,7 +52,7 @@ const Dashboard = () => {
 
     // Handle input change
     const handleInputChange = (e) => {
-        setSelectedFlight({...selectedFlight, [e.target.name]: e.target.value});
+        setSelectedFlight({...selectedFlight, [e.target.name]: e.target.value.toLowerCase()});
         setShowDropdown(true); // Show dropdown while typing
     };
 
@@ -63,7 +63,7 @@ const Dashboard = () => {
 
     // Dropdown name search filter. Memo helps avoid unnecesary renders.
     const handleFilterData = useMemo(() => {
-        return filterData.filter((p) => p.name.toLowerCase().includes(selectedFlight.name))
+        return filterData.filter((p) => p.Airline_Name.toLowerCase().includes(selectedFlight.Airline_Name))
     }, [selectedFlight, filterData]) 
 
   return (
@@ -81,10 +81,10 @@ const Dashboard = () => {
             <input 
                 type="text" 
                 placeholder='Name'
-                name="name" 
+                name="Airline_Name" 
                 onChange={handleInputChange}
                 onClick={handleInputClick}
-                value={selectedFlight.name}
+                value={selectedFlight.Airline_Name}
                 className="flight-search-input"
                 />
             {showDropdown && handleFilterData.length > 0 && (
@@ -101,7 +101,7 @@ const Dashboard = () => {
                         onClick={() => handleChange(flight)}
                         id='list-item'
                         >
-                        <span className='list-name'>{flight.name}</span>
+                        <span className='list-name'>{flight.Airline_Name}</span>
                         </li>
                     ))}
                 </ul>
