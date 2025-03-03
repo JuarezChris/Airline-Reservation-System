@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
+import SignInPage from "./components/SignInPage";
 import axios from "axios";
 import './App.css'
 import BookFlightPage from "./components/BookFlightPage";
@@ -40,6 +41,7 @@ function App() {
                 <Routes>
                     <Route index path="/dashboard" element={<Dashboard />} />
                     <Route index path="/flights" element={<BookFlightPage />} />
+                    <Route index path="/signIn" element={<SignInPage />} />
                 </Routes>
             </Router>
         </div>
