@@ -1,4 +1,4 @@
-from flask import render_template, redirect, request
+from flask import render_template, redirect, request, session
 from flask_app.models.flight_ticket_model import FlightTicket
 from flask_app import app
 from flask_app.models.user_model import User
@@ -32,6 +32,68 @@ def get_data():
     data = df.to_dict(orient="records")
     # print("Flask is returning:", data)  # Debugging
     return jsonify(data)
+
+@app.route('/flight/data/<int:flightId>', methods=['GET'])
+def get_flight_data(flightId):
+    print("Retrieving flight...")
+    df = load_csv()  # Load CSV
+
+    print("First few rows of CSV:")
+    print(df[['Ticket_ID']].head())  # Show only Ticket_ID column
+
+    print(f"Searching for Ticket_ID: {flightId}")
+
+    if 'Ticket_ID' not in df.columns:
+        return jsonify({"error": "Ticket_ID column missing in CSV"}), 400
+
+    # Print all Ticket_IDs to check values
+    # print("Available Ticket_IDs:", df['Ticket_ID'].tolist())
+
+    # Search for matching Ticket_ID
+    flight = df[df['Ticket_ID'] == flightId]
+
+    print("Filtered flight data:", flight)
+
+    if flight.empty:
+        return jsonify({"error": "Flight not found"}), 404
+    
+    flight_dict = flight.to_dict(orient="records")
+
+    response = jsonify({
+            "message": "Flight booked successfully",
+            "res": flight_dict
+        })
+    response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
+    response.headers.add("Access-Control-Allow-Credentials", "true")
+    return response, 201  # ✅ Return JSON + CORS headers
+
+
+# @app.route('/flight/data/<flightId>', methods=['GET'])
+# def get_flight_data(flightId):
+#     print("retrieving flight...")
+#     df = load_csv()
+#     # data = {
+#     #     'id': flightId
+#     # }
+#     print(flightId)
+
+#     # # Convert 'id' column to integers (in case it's stored as a string)
+#     # df['Ticket_ID'] = df['Ticket_ID'].astype(int)
+#     # Convert Ticket_ID to numeric and print data types
+#     df['Ticket_ID'] = pd.to_numeric(df['Ticket_ID'], errors='coerce')
+#     print("Data types of DataFrame columns:")
+#     print(df.dtypes)
+
+#     # Search for the matching flight ID
+#     flight = df[df['Ticket_ID'] == flightId]
+#     print("This is the flight",flight)
+
+#     # If no matching flight is found, return an error
+#     if flight.empty:
+#         return jsonify({"error": "Flight not found"}), 404
+
+#     # Convert the row to JSON and return it
+#     return jsonify(flight.iloc[0].to_dict())
 
 @app.route('/book/flight', methods=['OPTIONS'])
 def handle_options():

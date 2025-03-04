@@ -4,6 +4,7 @@ import Dashboard from "./components/Dashboard";
 import SignInPage from "./components/SignInPage";
 import axios from "axios";
 import './App.css'
+import FlightsPage from "./components/FlightsPage";
 import BookFlightPage from "./components/BookFlightPage";
 
 function App() {
@@ -40,8 +41,9 @@ function App() {
             <Router>
                 <Routes>
                     <Route index path="/dashboard" element={<Dashboard />} />
-                    <Route index path="/flights" element={<BookFlightPage />} />
+                    <Route index path="/flights" element={<FlightsPage />} />
                     <Route index path="/signIn" element={<SignInPage />} />
+                    <Route index path="/book/flight/:id" element={<BookFlightPage />} />
                 </Routes>
             </Router>
         </div>
