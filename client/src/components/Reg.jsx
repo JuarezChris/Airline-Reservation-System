@@ -16,27 +16,30 @@ const Reg = () => {
     const changeHandler = (e) => {
         setUser({...user, [e.target.name]:e.target.value})
     }
+    // {airline_user: {
+    //     fname: user.fname,
+    //     lname: user.lname,
+    //     email: user.email,
+    //     password: user.password,
+    //     password_confirmation: user.password_confirmation
+    //   }}
 
     const submitHandler = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/api/airline_user/register', 
-            {airline_user: {
-                fname: user.fname,
-                lname: user.lname,
-                email: user.email,
-                password: user.password,
-                password_confirmation: user.password_confirmation
-              }}
-            , {withCredentials:true, headers: {
-            "Content-Type": "application/json", // Ensure JSON is sent
-            "Accept": "application/json", // Expect JSON response
-          },})
-            .then((res) => {
-                navigate("/lead/list")
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+        axios.post("http://127.0.0.1:5000/register",{user}, {
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            withCredentials: true
+        })
+        .then((res) => {
+            console.log(res)
+            navigate("/dashboard")
+        })
+        .catch((err) => {
+            console.log(err);
+        })
     }
 
   return (

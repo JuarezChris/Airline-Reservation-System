@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 import Reg from './Reg';
 import Login from './Login';
 import '../styles/css/signIn.css'

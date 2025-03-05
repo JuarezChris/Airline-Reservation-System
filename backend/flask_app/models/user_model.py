@@ -10,8 +10,8 @@ class User:
     def __init__(self, data):
         #follow database table fields plus any other attribute you want to create
         self.id = data['id']
-        self.first_name = data['first_name']
-        self.last_name = data['last_name']
+        self.fname = data['first_name']
+        self.lname = data['last_name']
         self.email = data['email']
         self.password = data['password']
         self.flight_tickets = []
@@ -29,8 +29,11 @@ class User:
     
     @classmethod
     def create_user(cls, form_data):
-        query = "INSERT INTO users (first_name, last_name, email, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s);"
-        db_response = connectToMySQL(db).query_db(query, form_data)
+        print("Here at create user")
+        user_data = form_data["user"]
+        print("%%%%%%%%%%%%%")
+        query = "INSERT INTO users (fname, lname, email, password) VALUES (%(fname)s, %(lname)s, %(email)s, %(password)s);"
+        db_response = connectToMySQL(db).query_db(query, user_data)
         print(db_response)
         return db_response
     

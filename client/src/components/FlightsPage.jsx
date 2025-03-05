@@ -86,9 +86,9 @@ const FlightsPage = () => {
         .then(response => {
             console.log("Received Data:", response.data);  // Debug here
             if (typeof response.data === "string") {
-              setFlightData(JSON.parse(response.data));  // Manually parse if needed
+                setFlightData(JSON.parse(response.data));  // Manually parse if needed
             } else {
-              setFlightData(response.data);
+                setFlightData(response.data);
             }
         })
         .catch(error => console.error("Error fetching data:", error));

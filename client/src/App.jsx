@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import SignInPage from "./components/SignInPage";
+import NavBar from "./components/NavBar";
+import Login from "./components/Login";
+import ConfirmPage from "./components/ConfirmPage";
 import axios from "axios";
 import './App.css'
 import FlightsPage from "./components/FlightsPage";
@@ -39,11 +42,14 @@ function App() {
             </ul> */}
 
             <Router>
+            <NavBar />
                 <Routes>
                     <Route index path="/dashboard" element={<Dashboard />} />
                     <Route index path="/flights" element={<FlightsPage />} />
                     <Route index path="/signIn" element={<SignInPage />} />
+                    <Route index path="/login" element={<Login />} />
                     <Route index path="/book/flight/:id" element={<BookFlightPage />} />
+                    <Route index path="/confirmation/:id" element={<ConfirmPage />} />
                 </Routes>
             </Router>
         </div>

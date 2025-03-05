@@ -1,4 +1,5 @@
 from flask import render_template, redirect, request, session
+import stripe
 from flask_app.models.flight_ticket_model import FlightTicket
 from flask_app import app
 from flask_app.models.user_model import User
@@ -10,6 +11,10 @@ import os
 
 # Allow only localhost:5173 and enable credentials
 CORS(app, resources={r"/data": {"origins": "http://localhost:5173"}}, supports_credentials=True)
+
+# Set up Stripe Test Keys
+stripe.api_key = "sk_test_51Qz5NfFZX2j25Z0X2qqlwgm23BAvLBDviFQh6D1og4hWuP46grFiQRDLjUQKggkfDzQNSCoZvjSw3fuPNl5vyV8100ioIfUiKY"  # Replace with your Stripe Test Secret Key
+
 # CORS(app)  # Allows any origin
 # print(f"Allowed Origins: {ALLOWED_ORIGINS}")  # Debugging CORS origins
 
@@ -60,40 +65,13 @@ def get_flight_data(flightId):
     flight_dict = flight.to_dict(orient="records")
 
     response = jsonify({
-            "message": "Flight booked successfully",
+            "message": "found flight",
             "res": flight_dict
         })
     response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
     response.headers.add("Access-Control-Allow-Credentials", "true")
     return response, 201  # ✅ Return JSON + CORS headers
 
-
-# @app.route('/flight/data/<flightId>', methods=['GET'])
-# def get_flight_data(flightId):
-#     print("retrieving flight...")
-#     df = load_csv()
-#     # data = {
-#     #     'id': flightId
-#     # }
-#     print(flightId)
-
-#     # # Convert 'id' column to integers (in case it's stored as a string)
-#     # df['Ticket_ID'] = df['Ticket_ID'].astype(int)
-#     # Convert Ticket_ID to numeric and print data types
-#     df['Ticket_ID'] = pd.to_numeric(df['Ticket_ID'], errors='coerce')
-#     print("Data types of DataFrame columns:")
-#     print(df.dtypes)
-
-#     # Search for the matching flight ID
-#     flight = df[df['Ticket_ID'] == flightId]
-#     print("This is the flight",flight)
-
-#     # If no matching flight is found, return an error
-#     if flight.empty:
-#         return jsonify({"error": "Flight not found"}), 404
-
-#     # Convert the row to JSON and return it
-#     return jsonify(flight.iloc[0].to_dict())
 
 @app.route('/book/flight', methods=['OPTIONS'])
 def handle_options():
@@ -105,13 +83,75 @@ def handle_options():
     response.headers.add("Access-Control-Allow-Credentials", "true")
     return response, 200
 
+@app.route('/register', methods=['OPTIONS'])
+def handle_reg_options():
+    """Handles CORS preflight requests"""
+    response = jsonify({"message": "CORS preflight passed"})
+    response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
+    response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
+    response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
+    response.headers.add("Access-Control-Allow-Credentials", "true")
+    return response, 200
+
+@app.route('/create-payment-intent', methods=['OPTIONS'])
+def handle_payment_options():
+    """Handles CORS preflight requests"""
+    response = jsonify({"message": "CORS preflight passed"})
+    response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
+    response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
+    response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
+    response.headers.add("Access-Control-Allow-Credentials", "true")
+    return response, 200
+
+@app.route('/create-payment-intent', methods=['POST'])
+def create_payment_intent():
+    try:
+        data = request.get_json()
+        flight = data.get("flight", {})
+
+        if not flight or "Ticket_Price" not in flight:
+            return jsonify({"error": "Invalid flight data"}), 400
+
+        amount = int(flight["Ticket_Price"]) * 100  # Convert dollars to cents
+        print(f"Creating payment intent for amount: {amount}")
+
+        intent = stripe.PaymentIntent.create(
+            amount=amount,
+            currency="usd",
+            payment_method_types=["card"],
+        )
+        response = jsonify({
+            "message": "Flight booked successfully",
+            "data_received": data,
+            "clientSecret": intent.client_secret
+        })
+        response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
+        response.headers.add("Access-Control-Allow-Credentials", "true")
+        return response, 201  # ✅ Return JSON + CORS headers
+        # return jsonify({"clientSecret": intent.client_secret})
+
+    except Exception as e:
+        print("Error:", e)
+        return jsonify({"error": str(e)}), 500
+
 @app.route('/book/flight', methods=['POST'])
 def book_flight():
+    print("HEREE")
     try:
         data = request.get_json()
         print("made it")
         data['flight']['user_id'] = 3
         print("Received Data:", data)  # Debugging
+        ########### card payment ####################
+        amount = data.get("amount", 5000)  # Default to $50 (Stripe uses cents)
+
+        intent = stripe.PaymentIntent.create(
+            amount=amount,
+            currency="usd",
+            payment_method_types=["card"],
+        )
+        ########### end card payment ####################
+
 
         # Ensure data is received properly
         if not data:
@@ -126,7 +166,8 @@ def book_flight():
         response = jsonify({
             "message": "Flight booked successfully",
             "data_received": data,
-            "res": booking_response
+            "res": booking_response,
+            "clientSecret": intent.client_secret
         })
         response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
         response.headers.add("Access-Control-Allow-Credentials", "true")
@@ -135,6 +176,57 @@ def book_flight():
     except Exception as e:
         print("Error:", e)
         return jsonify({"error": str(e)}), 500
+    
+@app.route('/register', methods=['POST'])
+def register():
+    try:
+        # if not User.validate_user(request.form):
+        #     print("Made it here!")
+        #     return redirect('/')
+        data = request.get_json()
+        print("made it to register backend")
+        print("user form data", data)
+
+        # Ensure data is received properly
+        if not data:
+            return jsonify({"error": "No data received"}), 400
+
+        # If booking logic is needed, add it here
+        print("Processing register...")
+        # Save user
+        user_id = User.create_user(data)
+        print(user_id)
+
+        response = jsonify({
+            "message": "Flight booked successfully",
+            "data_received": data,
+            "res": user_id
+        })
+        response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
+        response.headers.add("Access-Control-Allow-Credentials", "true")
+        return response, 201  # ✅ Return JSON + CORS headers
+
+    except Exception as e:
+        print("Error:", e)
+        return jsonify({"error": str(e)}), 500
+    
+# @app.route('/create-payment-intent', methods=['POST'])
+# def create_payment():
+#     try:
+#         data = request.json
+#         amount = data.get("amount", 5000)  # Default to $50 (Stripe uses cents)
+
+#         intent = stripe.PaymentIntent.create(
+#             amount=amount,
+#             currency="usd",
+#             payment_method_types=["card"],
+#         )
+#         return jsonify({
+#             "clientSecret": intent.client_secret
+#         })
+#     except Exception as e:
+#         return jsonify({"error": str(e)}), 500
+
 
 # @app.route('/book/flight', methods=['POST'])
 # def book_flight():
