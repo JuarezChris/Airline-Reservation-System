@@ -1,16 +1,19 @@
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useUserSession } from '../context/UserSessionContext';
 
-const Reg = () => {
+const Reg = ({ user, setUser}) => {
     const navigate = useNavigate()
-    const [user, setUser] = useState({
-        fname:'',
-        lname:'',
-        email:'',
-        password:'',
-        password_confirmation:''
-    })
+    const { setUserSession } = useUserSession();
+    // const [user, setUser] = useState({
+    //     user_id: "",
+    //     fname:'',
+    //     lname:'',
+    //     email:'',
+    //     password:'',
+    //     password_confirmation:''
+    // })
     const [errors, setErrors] = useState({})
 
     const changeHandler = (e) => {
@@ -35,7 +38,8 @@ const Reg = () => {
         })
         .then((res) => {
             console.log(res)
-            navigate("/dashboard")
+            setUser(res.data.data_received.user)
+            navigate(`/dashboard`)
         })
         .catch((err) => {
             console.log(err);

@@ -2,7 +2,7 @@ import React, {useState, useRef, useEffect, useMemo} from 'react';
 import axios from "axios";
 import '../styles/css/flightSearch.css'
 
-const Dashboard = () => {
+const Dashboard = ({user}) => {
     const dropdownRef = useRef(null);
     const [flightData, setFlightData] = useState([]);
     const [showDropdown, setShowDropdown] = useState(false);

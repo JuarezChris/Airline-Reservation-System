@@ -24,6 +24,39 @@ stripe.api_key = "sk_test_51Qz5NfFZX2j25Z0X2qqlwgm23BAvLBDviFQh6D1og4hWuP46grFiQ
 
 # # Configure CORS: Allow only specified origins and HTTP methods
 # CORS(app, resources={r"/data": {"origins": ALLOWED_ORIGINS, "methods": ["GET"]}})
+@app.route('/book/flight', methods=['OPTIONS'])
+def handle_options():
+    """Handles CORS preflight requests"""
+    response = jsonify({"message": "CORS preflight passed"})
+    response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
+    response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
+    response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
+    response.headers.add("Access-Control-Allow-Credentials", "true")
+
+    # response.headers.add("Access-Control-Max-Age", "86400")  # ✅ Allow caching of preflight requests
+    return response, 200
+
+@app.route('/register', methods=['OPTIONS'])
+def handle_reg_options():
+    """Handles CORS preflight requests"""
+    response = jsonify({"message": "CORS preflight passed"})
+    response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
+    response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
+    response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
+    response.headers.add("Access-Control-Allow-Credentials", "true")
+
+    return response, 200
+
+@app.route('/create-payment-intent', methods=['OPTIONS'])
+def handle_payment_options():
+    """Handles CORS preflight requests"""
+    response = jsonify({"message": "CORS preflight passed"})
+    response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
+    response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
+    response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
+    response.headers.add("Access-Control-Allow-Credentials", "true")
+
+    return response, 200
 
 # Load CSV into DataFrame
 def load_csv():
@@ -73,39 +106,27 @@ def get_flight_data(flightId):
     return response, 201  # ✅ Return JSON + CORS headers
 
 
-@app.route('/book/flight', methods=['OPTIONS'])
-def handle_options():
-    """Handles CORS preflight requests"""
-    response = jsonify({"message": "CORS preflight passed"})
+@app.route('/flight/confirmation/<int:Ticket_ID>', methods=['GET'])
+def get_flight_confirmation(Ticket_ID):
+    print("Retrieving flight...")
+    flight_ticket = FlightTicket.retrieve_flight({"Ticket_ID":Ticket_ID})
+    
+    response = jsonify({
+            "message": "found flight",
+            "res": flight_ticket
+        })
     response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
-    response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
-    response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
     response.headers.add("Access-Control-Allow-Credentials", "true")
-    return response, 200
+    return response, 201  # ✅ Return JSON + CORS headers
 
-@app.route('/register', methods=['OPTIONS'])
-def handle_reg_options():
-    """Handles CORS preflight requests"""
-    response = jsonify({"message": "CORS preflight passed"})
-    response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
-    response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
-    response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
-    response.headers.add("Access-Control-Allow-Credentials", "true")
-    return response, 200
 
-@app.route('/create-payment-intent', methods=['OPTIONS'])
-def handle_payment_options():
-    """Handles CORS preflight requests"""
-    response = jsonify({"message": "CORS preflight passed"})
-    response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
-    response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
-    response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
-    response.headers.add("Access-Control-Allow-Credentials", "true")
-    return response, 200
+
 
 @app.route('/create-payment-intent', methods=['POST'])
 def create_payment_intent():
     try:
+        # print("Session ID at payment start:", request.cookies.get('session'))  # ✅ Print session ID
+        # print("Session Data:", session)  # ✅ Print session contents
         data = request.get_json()
         flight = data.get("flight", {})
 
@@ -139,8 +160,16 @@ def book_flight():
     print("HEREE")
     try:
         data = request.get_json()
+        # print("Session at booking start:", session)  # Debugging
         print("made it")
-        data['flight']['user_id'] = 3
+        print(data['user']['user_id'])
+            # ✅ Check if user is logged in
+        # if 'user_id' not in session:
+        #     print("ERROR: No user_id found in session")
+        #     return jsonify({"error": "User not logged in"}), 401  # Prevents crashes
+        
+        # print(session['user_id'])
+        data['flight']['user_id'] = data['user']['user_id']
         print("Received Data:", data)  # Debugging
         ########### card payment ####################
         amount = data.get("amount", 5000)  # Default to $50 (Stripe uses cents)
@@ -195,12 +224,15 @@ def register():
         print("Processing register...")
         # Save user
         user_id = User.create_user(data)
-        print(user_id)
-
+        # print(user_id)
+        session['user_id'] = user_id
+        # session.modified = True
+        print(session['user_id'])
+        data["user"]["user_id"] = user_id
         response = jsonify({
-            "message": "Flight booked successfully",
+            "message": "Register Successful",
             "data_received": data,
-            "res": user_id
+            "user_id": user_id
         })
         response.headers.add("Access-Control-Allow-Origin", "http://localhost:5173")
         response.headers.add("Access-Control-Allow-Credentials", "true")

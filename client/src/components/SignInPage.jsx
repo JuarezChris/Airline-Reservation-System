@@ -4,7 +4,7 @@ import Reg from './Reg';
 import Login from './Login';
 import '../styles/css/signIn.css'
 
-const SignInPage = () => {
+const SignInPage = ({ user, setUser }) => {
     const [showLogin, setShowLogin] = useState(false);
 
 return (
@@ -14,7 +14,7 @@ return (
         </div>
         { showLogin ? (
             <>
-                <Login />
+                <Login user={user} setUser={setUser} />
                 <p
                     className='loginRegLink'
                     onClick={() => setShowLogin(false)}
@@ -26,7 +26,7 @@ return (
             </>
         ) : (
             <>
-                <Reg />
+                <Reg user={user} setUser={setUser}/>
                 <p
                     className='loginRegLink'
                     onClick={() => setShowLogin(true)}

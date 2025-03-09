@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
+import { useUserSession } from '../context/UserSessionContext';
 
-const PaymentForm = ({ flight, clientSecret }) => {
+const PaymentForm = ({ flight, clientSecret, user }) => {
+    const { userSession } = useUserSession();
+    // const [user, setUser ] = useState({})
     const stripe = useStripe();
     const elements = useElements();
     const navigate = useNavigate();
@@ -58,7 +61,7 @@ const PaymentForm = ({ flight, clientSecret }) => {
     };
 
     const handlePurchase = () => {
-        axios.post("http://127.0.0.1:5000/book/flight",{flight}, {
+        axios.post(`http://127.0.0.1:5000/book/flight`,{flight, user}, {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
@@ -68,7 +71,7 @@ const PaymentForm = ({ flight, clientSecret }) => {
         
         .then(response => {
             console.log(response.data);
-            navigate(`/confirmation/${flight.Ticket_ID}`)
+            navigate(`/confirmation/${response.data.res.ticket_id}`)
         })
         .catch(error => console.error("Error booking flight:", error));
     };

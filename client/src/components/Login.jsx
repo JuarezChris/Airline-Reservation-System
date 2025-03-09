@@ -1,13 +1,15 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useUserSession } from '../context/UserSessionContext';
 
-const Login = () => {
+const Login = ({user, setUser}) => {
     const navigate = useNavigate()
-    const [user, setUser] = useState({
-        email:'',
-        password:'',
-    })
+    const { setUserSession } = useUserSession();
+    // const [user, setUser] = useState({
+    //     email:'',
+    //     password:'',
+    // })
     const [errors, setErrors] = useState({})
 
     const changeHandler = (e) => {
@@ -27,8 +29,8 @@ const Login = () => {
             "Accept": "application/json", // Expect JSON response
         },})
             .then((res) => {
-                // console.log(res)
-                setEventManagerSession(res.data.event_manager)
+                console.log(res)
+                // setUser(res.data.event_manager)
                 // setUser(res.data.event_manager);
                 navigate("/dashboard")
             })

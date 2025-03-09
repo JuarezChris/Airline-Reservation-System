@@ -6,7 +6,7 @@ import axios from "axios";
 import PaymentForm from "./PaymentForm";  // ✅ Import PaymentForm
 
 
-const BookFlightPage = () => {
+const BookFlightPage = ({user}) => {
     const stripePromise = loadStripe("pk_test_51Qz5NfFZX2j25Z0XYGthiMz0CwUOlPqCGQPoKufgdc8JeH5ysB93dqZh1YxbSupc2J58OOYq3wZrxA3SzfhHl6o10092JJxiYw"); // Replace with your Stripe Test Public Key
     const { id } = useParams(); 
     const navigate = useNavigate();
@@ -85,7 +85,7 @@ const BookFlightPage = () => {
             {/* ✅ Ensure PaymentForm is inside <Elements> */}
             {clientSecret && (
                 <Elements stripe={stripePromise} options={{ clientSecret }}>
-                    <PaymentForm flight={flight} clientSecret={clientSecret} />
+                    <PaymentForm flight={flight} clientSecret={clientSecret} user={user} />
                 </Elements>
             )}
         </div>

@@ -1,5 +1,9 @@
 from flask_app.controllers import flights
 from flask_app import app
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
 # from flask import Flask, jsonify
 # from flask_cors import CORS
 # import pandas as pd
@@ -30,7 +34,3 @@ from flask_app import app
 #     data = df.to_dict(orient="records")
 #     # print("Flask is returning:", data)  # Debugging
 #     return jsonify(data)
-
-if __name__ == '__main__':
-    app.run(debug=True)
-

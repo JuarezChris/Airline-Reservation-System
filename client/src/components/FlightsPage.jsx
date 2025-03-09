@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import '../styles/css/flightSearch.css'
 
-const FlightsPage = () => {
+const FlightsPage = ({user}) => {
     const navigate = useNavigate();
     const [flightData, setFlightData] = useState([]);
     const [filterData, setFilterData] = useState([])
@@ -78,21 +78,21 @@ const FlightsPage = () => {
     };
 
 
-    useEffect(() => {
-        axios.post("http://127.0.0.1:5000/book/flight", {withCredentials:true, headers: {
-          "Content-Type": "application/json", // Ensure JSON is sent
-          "Accept": "application/json", // Expect JSON response
-        },})
-        .then(response => {
-            console.log("Received Data:", response.data);  // Debug here
-            if (typeof response.data === "string") {
-                setFlightData(JSON.parse(response.data));  // Manually parse if needed
-            } else {
-                setFlightData(response.data);
-            }
-        })
-        .catch(error => console.error("Error fetching data:", error));
-      }, []);
+    // useEffect(() => {
+    //     axios.post("http://127.0.0.1:5000/book/flight", {withCredentials:true, headers: {
+    //       "Content-Type": "application/json", // Ensure JSON is sent
+    //       "Accept": "application/json", // Expect JSON response
+    //     },})
+    //     .then(response => {
+    //         console.log("Received Data:", response.data);  // Debug here
+    //         if (typeof response.data === "string") {
+    //             setFlightData(JSON.parse(response.data));  // Manually parse if needed
+    //         } else {
+    //             setFlightData(response.data);
+    //         }
+    //     })
+    //     .catch(error => console.error("Error fetching data:", error));
+    //   }, []);
   return (
     <div>
         <h1>Book a Flight</h1>

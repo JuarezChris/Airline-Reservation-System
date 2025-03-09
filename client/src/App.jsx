@@ -9,25 +9,17 @@ import axios from "axios";
 import './App.css'
 import FlightsPage from "./components/FlightsPage";
 import BookFlightPage from "./components/BookFlightPage";
+import { UserSessionProvider } from './context/UserSessionContext';
 
 function App() {
-//   const [data, setData] = useState([]);
-
-//     useEffect(() => {
-//       axios.get("http://127.0.0.1:5000/data", {withCredentials:true, headers: {
-//         "Content-Type": "application/json", // Ensure JSON is sent
-//         "Accept": "application/json", // Expect JSON response
-//       },})
-//       .then(response => {
-//           console.log("Received Data:", response.data);  // Debug here
-//           if (typeof response.data === "string") {
-//               setData(JSON.parse(response.data));  // Manually parse if needed
-//           } else {
-//               setData(response.data);
-//           }
-//       })
-//       .catch(error => console.error("Error fetching data:", error));
-//     }, []);
+    const [user, setUser] = useState({
+        user_id: false,
+        fname:'',
+        lname:'',
+        email:'',
+        password:'',
+        password_confirmation:''
+    })
 
     return (
         <div>
@@ -42,15 +34,17 @@ function App() {
             </ul> */}
 
             <Router>
-            <NavBar />
+            <NavBar user={user} setUser={setUser}/>
+            <UserSessionProvider>
                 <Routes>
-                    <Route index path="/dashboard" element={<Dashboard />} />
-                    <Route index path="/flights" element={<FlightsPage />} />
-                    <Route index path="/signIn" element={<SignInPage />} />
-                    <Route index path="/login" element={<Login />} />
-                    <Route index path="/book/flight/:id" element={<BookFlightPage />} />
-                    <Route index path="/confirmation/:id" element={<ConfirmPage />} />
+                    <Route index path="/dashboard" element={<Dashboard user={user} />} />
+                    <Route index path="/flights" element={<FlightsPage user={user} />} />
+                    <Route index path="/signIn" element={<SignInPage user={user} setUser={setUser} />} />
+                    {/* <Route index path="/login" element={<Login setUser={setUser} />} /> */}
+                    <Route index path="/book/flight/:id" element={<BookFlightPage user={user} />} />
+                    <Route index path="/confirmation/:ticket_id" element={<ConfirmPage user={user} />} />
                 </Routes>
+            </UserSessionProvider>
             </Router>
         </div>
     );
