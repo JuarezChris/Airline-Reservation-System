@@ -1,0 +1,94 @@
+.flights-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.flight-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out;
+}
+
+.flight-card:hover {
+  transform: scale(1.02);
+}
+
+.flight-airline {
+  width: 20%;
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 15px;
+  border-right: 2px solid #ccc;
+}
+
+.flight-info {
+  width: 60%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.flight-time {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+}
+
+.flight-route {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.flight-duration {
+  font-size: 13px;
+  color: #777;
+}
+
+.flight-action {
+  width: 20%;
+  text-align: right;
+  padding-right: 15px;
+}
+
+.book-button {
+  background: #0052D4;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease-in-out;
+}
+
+.book-button:hover {
+  background: #003c8f;
+}
+
+@media (max-width: 600px) {
+  .flight-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 12px;
+  }
+
+  .flight-airline, .flight-info, .flight-action {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .book-button {
+      width: 100%;
+  }
+}

@@ -1,32 +1,16 @@
 import React, {useState, useRef, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import '../styles/css/flightSearch.css'
+import '../styles/css/flightsPage.css'
+// import '../styles/css/flightSearch.css'
 
-const FlightsPage = ({user}) => {
+const FlightsPage = ({user, foundFlight, setFoundFlight}) => {
     const navigate = useNavigate();
     const [flightData, setFlightData] = useState([]);
     const [filterData, setFilterData] = useState([])
 
-
-    // const flight = {
-    //     user_id: 1,
-    //     airline_ticket_id: 10
-    // };
-    // const handlePurchase = (flight) => {
-    //     console.log(flight)
-    //     axios.post("http://127.0.0.1:5000/book/flight",{flight: {name_flight:"HEllo"}} ,{
-    //          headers: {
-    //         "Content-Type": "application/json", // Ensure JSON is sent
-    //         "Accept": "application/json", // Expect JSON response
-    //     },withCredentials:true})
-    //     .then(response => {
-    //         console.log(response.data);
-    //     })
-    //     .catch(error => console.error("Error fetching data:", error));
-    // }
-
     const handleBookFlight = (flightId) => {
+        setFoundFlight([])
         navigate(`/book/flight/${flightId}`);
     };
 
@@ -77,46 +61,60 @@ const FlightsPage = ({user}) => {
         setShowDropdown(true); // Show dropdown only when clicked
     };
 
-
-    // useEffect(() => {
-    //     axios.post("http://127.0.0.1:5000/book/flight", {withCredentials:true, headers: {
-    //       "Content-Type": "application/json", // Ensure JSON is sent
-    //       "Accept": "application/json", // Expect JSON response
-    //     },})
-    //     .then(response => {
-    //         console.log("Received Data:", response.data);  // Debug here
-    //         if (typeof response.data === "string") {
-    //             setFlightData(JSON.parse(response.data));  // Manually parse if needed
-    //         } else {
-    //             setFlightData(response.data);
-    //         }
-    //     })
-    //     .catch(error => console.error("Error fetching data:", error));
-    //   }, []);
   return (
     <div>
-        <h1>Book a Flight</h1>
-        <div>
-        {
-        flightData.map((flight, idx) => (
-            <li 
-            key={idx} 
-            // onClick={() => handleChange(flight)}
-            id='list-item'
-            >
-            <div className='flight-ticket-container'>
-                <span className='list-name'>{flight.Airline_Name}</span>
-                <div>
-                    <p>{flight.Departure_City} ---------- {flight.Arrival_City}</p>
-                    <p>{flight.Duration}</p>
-                    <button onClick={() => handleBookFlight(flight.Ticket_ID)}>Book</button>
-                </div>
+    <h1>Book a Flight</h1>
+    <div className="flights-container">
+{ !foundFlight.length > 0 ? 
+    flightData.map((flight, idx) => (
+        <div key={idx} className="flight-card">
+            
+            <div className="flight-airline">
+                <p className="airline-name">{flight.Airline_Name}</p>
             </div>
-            </li>
-        ))}
+
+            <div className="flight-info">
+                <p className="flight-time">{flight.Departure_Time} → {flight.Arrival_Time}</p>
+                <p className="flight-route">{flight.Departure_City} → {flight.Arrival_City}</p>
+                <p className="flight-duration">{flight.Duration}</p>
+            </div>
+
+            <div className="flight-action">
+                <button onClick={() => handleBookFlight(flight.Ticket_ID)} className="book-button">
+                    Book
+                </button>
+            </div>
+
         </div>
-    </div>
-  )
+    ))
+    :
+    foundFlight.map((flight, idx) => (
+        <div key={idx} className="flight-card">
+            
+            <div className="flight-airline">
+                <p className="airline-name">{flight.flight.Airline_Name}</p>
+            </div>
+
+            <div className="flight-info">
+                <p className="flight-time">{flight.flight.Departure_Time} → {flight.flight.Arrival_Time}</p>
+                <p className="flight-route">{flight.flight.Departure_City} → {flight.flight.Arrival_City}</p>
+                <p className="flight-duration">{flight.flight.Duration}</p>
+            </div>
+
+            <div className="flight-action">
+                <button onClick={() => handleBookFlight(flight.flight.Ticket_ID)} className="book-button">
+                    Book
+                </button>
+            </div>
+
+        </div>
+    ))
+}
+</div>
+
+</div>
+)
 }
 
 export default FlightsPage
+

@@ -6,10 +6,6 @@ import { useUserSession } from '../context/UserSessionContext';
 const Login = ({user, setUser}) => {
     const navigate = useNavigate()
     const { setUserSession } = useUserSession();
-    // const [user, setUser] = useState({
-    //     email:'',
-    //     password:'',
-    // })
     const [errors, setErrors] = useState({})
 
     const changeHandler = (e) => {
@@ -19,25 +15,21 @@ const Login = ({user, setUser}) => {
     const submitHandler = (e) => {
         e.preventDefault()
         // console.log(user)
-        axios.post('http://localhost:3001/api/airline_user/login', 
-            {airline_user: {
-                email: user.email,
-                password: user.password,
-            }}
-            , {withCredentials:true, headers: {
-            "Content-Type": "application/json", // Ensure JSON is sent
-            "Accept": "application/json", // Expect JSON response
-        },})
-            .then((res) => {
-                console.log(res)
-                // setUser(res.data.event_manager)
-                // setUser(res.data.event_manager);
-                navigate("/dashboard")
-            })
-            .catch((err) => {
-                console.error("Login failed:", err.response?.data?.error || err.message);
-                setErrors(err.response?.data?.error || "An error occurred.");
-            })
+        axios.post("http://127.0.0.1:5000/login",{user}, {
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            withCredentials: true
+        })
+        .then((res) => {
+            console.log(res)
+            setUser(res.data.data_received[0])
+            navigate(`/dashboard`)
+        })
+        .catch((err) => {
+            console.log(err);
+        })
     }
 
   return (

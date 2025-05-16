@@ -9,6 +9,8 @@ pandas = "*"
 flask-cors = "*"
 pymysql = "*"
 flask-session = "*"
+flask-mail = "*"
+stripe = "*"
 
 [dev-packages]
 

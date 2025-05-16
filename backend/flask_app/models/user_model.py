@@ -62,8 +62,8 @@ class User:
     @classmethod
     def find_user(cls,email_dict):
         query = "SELECT * from users WHERE email = %(email)s"
-        db_response = connectToMySQL(db).query_db(query, email_dict)
-        print(db_response)
+        db_response = connectToMySQL(db).query_db(query, email_dict['user'])
+        print(db_response[0])
         if len(db_response) < 1:
             return False
-        return cls(db_response[0])
+        return db_response

@@ -6,26 +6,12 @@ import { useUserSession } from '../context/UserSessionContext';
 const Reg = ({ user, setUser}) => {
     const navigate = useNavigate()
     const { setUserSession } = useUserSession();
-    // const [user, setUser] = useState({
-    //     user_id: "",
-    //     fname:'',
-    //     lname:'',
-    //     email:'',
-    //     password:'',
-    //     password_confirmation:''
-    // })
     const [errors, setErrors] = useState({})
 
     const changeHandler = (e) => {
         setUser({...user, [e.target.name]:e.target.value})
     }
-    // {airline_user: {
-    //     fname: user.fname,
-    //     lname: user.lname,
-    //     email: user.email,
-    //     password: user.password,
-    //     password_confirmation: user.password_confirmation
-    //   }}
+
 
     const submitHandler = (e) => {
         e.preventDefault()

@@ -16,16 +16,25 @@ body {
     padding-top: 50px; /* Added padding so it does not touch navbar */
 }
 
+.dropdown-container {
+    position: relative; /* ✅ Ensures dropdown appears relative to this */
+    width: 100%;
+}
+
 /* Search container */
 .search-container {
+    /* position: relative; */
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
-    gap: 12px;
+    align-items: center;
+    gap: 10px; /* Reduced spacing */
     margin-top: 20px;
-    background: rgba(0, 0, 0, 0.6); /* Darker background for better contrast */
-    padding: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 12px;
     border-radius: 10px;
+    max-width: 95%; /* Ensures it doesn't stretch too wide */
+    /* overflow: hidden; Prevents layout breaking */
 }
 
 /* Inputs and buttons */
@@ -141,7 +150,7 @@ body {
 
 
 
-/* .list-name{
+.list-name{
     padding: 0;
     width: 100%;
 }
@@ -178,4 +187,4 @@ body {
 .list-name{
     padding: 0;
     width: 100%;
-} */
+}

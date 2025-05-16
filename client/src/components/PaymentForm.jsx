@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { useUserSession } from '../context/UserSessionContext';
+import '../styles/css/paymentForm.css';
 
 const PaymentForm = ({ flight, clientSecret, user }) => {
     const { userSession } = useUserSession();
-    // const [user, setUser ] = useState({})
     const stripe = useStripe();
     const elements = useElements();
     const navigate = useNavigate();
@@ -14,17 +14,6 @@ const PaymentForm = ({ flight, clientSecret, user }) => {
     const [loading, setLoading] = useState(false);
     const [paymentSuccess, setPaymentSuccess] = useState(false);
 
-    // // ✅ Request Stripe Payment Intent from Flask
-    // useEffect(() => {
-    //     if (flight && flight.Ticket_Price) {
-    //         axios.post("http://127.0.0.1:5000/create-payment-intent", { flight })
-    //             .then(response => {
-    //                 console.log("Payment Intent:", response.data);
-    //                 setClientSecret(response.data.clientSecret); // ✅ Save the clientSecret
-    //             })
-    //             .catch(error => console.error("Error fetching payment intent:", error));
-    //     }
-    // }, [flight]);
 
     // ✅ Handle Stripe Payment
     const handlePayment = async (e) => {
@@ -77,17 +66,19 @@ const PaymentForm = ({ flight, clientSecret, user }) => {
     };
 
     return (
-        <div>
-            <form onSubmit={handlePayment}>
-                    <h3>Enter Payment Details</h3>
-                    <CardElement />
-                    <button type="submit" disabled={!stripe || loading}>
-                        {loading ? "Processing..." : "Pay & Book Flight"}
-                    </button>
-                    {error && <p style={{ color: "red" }}>{error}</p>}
-            </form>
-        </div>
-    );
+        <div className="payment-container">
+        <h3 className="payment-title">Enter Payment Details</h3>
+        <form onSubmit={handlePayment} className="payment-form">
+            <div className="card-element-container">
+                <CardElement className="custom-card-input" />
+            </div>
+            <button type="submit" className="payment-button" disabled={!stripe || loading}>
+                {loading ? "Processing..." : "Pay & Book Flight"}
+            </button>
+            {error && <p className="payment-error">{error}</p>}
+        </form>
+    </div>
+);
 };
 
 export default PaymentForm;

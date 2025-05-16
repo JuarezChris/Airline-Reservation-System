@@ -20,6 +20,7 @@ function App() {
         password:'',
         password_confirmation:''
     })
+    const [foundFlight, setFoundFlight] = useState([]);
 
     return (
         <div>
@@ -37,12 +38,12 @@ function App() {
             <NavBar user={user} setUser={setUser}/>
             <UserSessionProvider>
                 <Routes>
-                    <Route index path="/dashboard" element={<Dashboard user={user} />} />
-                    <Route index path="/flights" element={<FlightsPage user={user} />} />
+                    <Route index path="/dashboard" element={<Dashboard user={user} foundFlight={foundFlight} setFoundFlight={setFoundFlight} />} />
+                    <Route  path="/flights" element={<FlightsPage user={user} foundFlight={foundFlight} setFoundFlight={setFoundFlight} />} />
                     <Route index path="/signIn" element={<SignInPage user={user} setUser={setUser} />} />
                     {/* <Route index path="/login" element={<Login setUser={setUser} />} /> */}
-                    <Route index path="/book/flight/:id" element={<BookFlightPage user={user} />} />
-                    <Route index path="/confirmation/:ticket_id" element={<ConfirmPage user={user} />} />
+                    <Route  path="/book/flight/:id" element={<BookFlightPage user={user} />} />
+                    <Route  path="/confirmation/:ticket_id" element={<ConfirmPage user={user} />} />
                 </Routes>
             </UserSessionProvider>
             </Router>

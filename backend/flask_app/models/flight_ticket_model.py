@@ -65,7 +65,7 @@ class FlightTicket:
             if not ticket_id:
                 return {"error": "Failed to insert ticket"}
 
-            return {"message": "Flight booked successfully", "ticket_id": ticket_id}
+            return {"message": "Flight booked successfully", "ticket_id": ticket_id, "confirmation_num": confirmation_num, "flight_data":flight_data }
         
         except Exception as e:
             return {"error": str(e)}
@@ -88,14 +88,17 @@ class FlightTicket:
         except Exception as e:
             return {"error": str(e)}
     
+
+    @classmethod
+    def delete(cls, flightId):
+        query = "DELETE FROM airline_tickets WHERE airline_ticket_id = %(Ticket_ID)s;"
+        db_response = connectToMySQL(db).query_db(query, flightId)
+        print(db_response)
+        return db_response
+
     @staticmethod
     def generate_random_string(length=7):
         characters = string.ascii_letters + string.digits  # A-Z, a-z, 0-9
         return ''.join(random.choices(characters, k=length))
-
-    # @classmethod
-    # def buy_ticket(cls, form_data):
-    #     return "Success"
-
 
 

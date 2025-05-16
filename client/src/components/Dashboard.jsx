@@ -1,143 +1,173 @@
 import React, {useState, useRef, useEffect, useMemo} from 'react';
 import axios from "axios";
-import '../styles/css/flightSearch.css'
+import { useNavigate } from 'react-router-dom';
+import '../styles/css/flightSearch.css';
 
-const Dashboard = ({user}) => {
+const Dashboard = ({user, foundFlight, setFoundFlight}) => {
+    const navigate = useNavigate();
     const dropdownRef = useRef(null);
     const [flightData, setFlightData] = useState([]);
     const [showDropdown, setShowDropdown] = useState(false);
-    const [filterData, setFilterData] = useState([])
+    const [filterData, setFilterData] = useState([]);
+
     const [selectedFlight, setSelectedFlight] = useState({
-        Airline_Name: ""
-    })
+        Departure_City: "",
+        Ticket_Price: "",
+        Arrival_City: "",
+        Arrival_Date: "",
+        Departure_Date: "",
+    });
+
     const [destination, setDestination] = useState("");
     const [searchType, setSearchType] = useState("Roundtrip");
     const [date, setDate] = useState("");
+    const [returnDate, setReturnDate] = useState(""); // ✅ Added state for return date
     const [maxPrice, setMaxPrice] = useState("");
 
     useEffect(() => {
-        setFilterData(flightData)
-    },[flightData])
+        setFilterData(flightData);
+    }, [flightData]);
 
     useEffect(() => {
-      axios.get("http://127.0.0.1:5000/data", {withCredentials:true, headers: {
-        "Content-Type": "application/json", // Ensure JSON is sent
-        "Accept": "application/json", // Expect JSON response
-      },})
-      .then(response => {
-          console.log("Received Data:", response.data);  // Debug here
-          if (typeof response.data === "string") {
-            setFlightData(JSON.parse(response.data));  // Manually parse if needed
-          } else {
-            setFlightData(response.data);
-          }
-      })
-      .catch(error => console.error("Error fetching data:", error));
+        axios.get("http://127.0.0.1:5000/data", { withCredentials: true, headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        }})
+        .then(response => {
+            console.log("Received Data:", response.data);
+            if (typeof response.data === "string") {
+                setFlightData(JSON.parse(response.data));
+            } else {
+                setFlightData(response.data);
+            }
+        })
+        .catch(error => console.error("Error fetching data:", error));
     }, []);
 
-       // Close dropdown if clicked outside
-       useEffect(() => {
+    useEffect(() => {
         const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-            setShowDropdown(false); // Close dropdown when clicked outside
-        }
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setShowDropdown(false);
+            }
         };
 
-        // Add event listener when the dropdown is shown
         if (showDropdown) {
-        document.addEventListener('mousedown', handleClickOutside);
+            document.addEventListener('mousedown', handleClickOutside);
         }
 
-        // Cleanup event listener on component unmount or when dropdown is hidden
         return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [showDropdown]);
 
-    // Handle input change
     const handleInputChange = (e) => {
-        setSelectedFlight({...selectedFlight, [e.target.name]: e.target.value.toLowerCase()});
-        setShowDropdown(true); // Show dropdown while typing
+        setSelectedFlight({ ...selectedFlight, [e.target.name]: e.target.value});
+        setShowDropdown(true);
     };
 
-    // Toggle dropdown visibility when clicking the input
-    const handleInputClick = () => {
-        setShowDropdown(true); // Show dropdown only when clicked
-    };
 
-    // Dropdown name search filter. Memo helps avoid unnecesary renders.
+        // Dropdown name search filter. Memo helps avoid unnecesary renders.
     const handleFilterData = useMemo(() => {
-        return filterData.filter((p) => p.Airline_Name.toLowerCase().includes(selectedFlight.Airline_Name))
+        return filterData.filter((p) => {
+            console.log(p.Departure_City)
+            return p.Departure_City.toLowerCase().includes(selectedFlight.Departure_City)
+        })
     }, [selectedFlight, filterData]) 
 
-    // Handle search button click
-    const handleSearch = async () => {
-        try {
-            const response = await axios.get("http://127.0.0.1:5000/search", {
-                params: { departure: selectedFlight.name, destination, searchType, date, maxPrice },
+    const handleSearch = () => {
+        console.log("here")
+        let bestMatches = [];
+        let highestScore = 0;
+
+        flightData.forEach((flight) => {
+            let matchScore = 0;
+            let totalKeys = Object.keys(selectedFlight).length;
+
+            Object.keys(selectedFlight).forEach((key) => {
+                if (selectedFlight[key] && flight[key] === selectedFlight[key]) {
+                    matchScore++; // ✅ Increase score for each matching property
+                }
             });
-            console.log("Search Results:", response.data);
-        } catch (error) {
-            console.error("Error fetching flights:", error);
-        }
+
+            const matchPercentage = (matchScore / totalKeys) * 100; // Match percentage
+            if (matchScore > 0) {
+                bestMatches.push({ flight, matchPercentage });
+            }
+
+            bestMatches.sort((a, b) => b.matchPercentage - a.matchPercentage);
+        });
+
+        setFoundFlight(bestMatches || "No similar sandwich found");
+        navigate(`/flights`);
     };
+
 
     return (
         <div className="dashboard-container">
             <h1>Find Your Flight ✈️</h1>
             <div className="search-container">
+            <div className="dropdown-container">
                 <input 
                     type="text" 
                     placeholder="Flying from (e.g., Atlanta ATL)"
-                    name="name"
-                    value={selectedFlight.name}
+                    name="Departure_City"
+                    value={selectedFlight.Departure_City}
                     onChange={handleInputChange}
                     className="flight-search-input"
                 />
-
-                {showDropdown && handleFilterData.length > 0 && (
-                    <ul ref={dropdownRef} id='listControl'>
-                        {handleFilterData.map((flight, idx) => (
-                            <li key={idx} onClick={() => handleSelectFlight(flight)} id='list-item'>
-                                {flight.name}
-                            </li>
-                        ))}
-                    </ul>
-                )}
-
-                {showDropdown && handleFilterData.length === 0 && (
-                    <ul id='listControl'>
-                        <li className="px-4 py-2">No matches found</li>
-                    </ul>
-                )}
+                
+            </div>
 
                 <input 
                     type="text" 
                     placeholder="Flying to (e.g., Los Angeles LAX)"
-                    value={destination}
-                    onChange={(e) => setDestination(e.target.value)}
+                    value={selectedFlight.Arrival_City}
+                    name="Arrival_City"
+                    onChange={handleInputChange}
                     className="flight-search-input"
                 />
 
-                <select value={searchType} onChange={(e) => setSearchType(e.target.value)} className="flight-search-select">
+                <select 
+                    value={searchType} 
+                    onChange={(e) => setSearchType(e.target.value)} 
+                    className="flight-search-select"
+                >
                     <option value="Roundtrip">Roundtrip</option>
                     <option value="One-way">One-way</option>
                 </select>
 
-                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="flight-search-date" />
+                {/* Always Show Departure Date */}
+                <input 
+                    type="date" 
+                    value={selectedFlight.Departure_Date}
+                    name="Departure_Date"
+                    onChange={handleInputChange}
+                    className="flight-search-date" 
+                />
+
+                {/* Show Return Date ONLY if "Roundtrip" is selected */}
+                {searchType === "Roundtrip" && (
+                    <input 
+                        type="date" 
+                        value={selectedFlight.Arrival_Date}
+                        name="Arrival_Date"
+                        onChange={handleInputChange}
+                        className="flight-search-date" 
+                    />
+                )}
 
                 <input 
                     type="number" 
                     placeholder="Max price ($)"
-                    value={maxPrice}
-                    onChange={(e) => setMaxPrice(e.target.value)}
+                    value={selectedFlight.Ticket_Price}
+                    name="Ticket_Price"
+                    onChange={handleInputChange}
                     className="flight-search-price"
                 />
 
                 <button onClick={handleSearch} className="flight-search-button">Search</button>
             </div>
 
-            {/* New Information Section */}
             <section className="info-section">
                 <h2 className="info-title">Supporting You Through Your Travel Journey</h2>
 
@@ -170,58 +200,5 @@ const Dashboard = ({user}) => {
         </div>
     );
 };
-
-//   return (
-//     <div>
-//         <h1>Dashboard</h1>
-//         {/* <h1>CSV Data from Flask</h1>
-//         <ul>
-//             {FlightData.map((item) => (
-//                 <li key={item.id}>
-//                     {item.name}
-//                 </li>
-//             ))}
-//         </ul> */}
-//         <div className="search-container">
-//             <input 
-//                 type="text" 
-//                 placeholder='Name'
-//                 name="Airline_Name" 
-//                 onChange={handleInputChange}
-//                 onClick={handleInputClick}
-//                 value={selectedFlight.Airline_Name}
-//                 className="flight-search-input"
-//                 />
-//             {showDropdown && handleFilterData.length > 0 && (
-//                 <ul 
-//                     ref={dropdownRef}
-//                     name="selectFlight" 
-//                     // onChange={handleChange}
-//                     id='listControl'
-//                     >
-//                     {
-//                     handleFilterData.map((flight, idx) => (
-//                         <li 
-//                         key={idx} 
-//                         onClick={() => handleChange(flight)}
-//                         id='list-item'
-//                         >
-//                         <span className='list-name'>{flight.Airline_Name}</span>
-//                         </li>
-//                     ))}
-//                 </ul>
-//             )}
-
-//             {showDropdown && handleFilterData.length === 0 && (
-//                 <ul 
-//                     id='listControl'
-//                 >
-//                     <li className="px-4 py-2">No matches found</li>
-//                 </ul>
-//             )}
-//         </div>
-//     </div>
-//   )
-// }
 
 export default Dashboard

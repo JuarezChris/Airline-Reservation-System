@@ -41,7 +41,7 @@ return (
     : 
     <div>
     <Link className="signup" to={"/signIn"}>SIGN UP</Link>
-    <Link className="login" to={"/login"}>LOG IN</Link>
+    <Link className="login" to={"/signIn"}>LOG IN</Link>
     </div>
     }
     <span className="icon bell">🔔</span>
